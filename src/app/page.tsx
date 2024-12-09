@@ -57,7 +57,7 @@ function Subsection({
 }) {
   return (
     <section className="my-8 mx-auto px-8 max-w-3xl box-content">
-      <h2 className="text-4xl font-bold text-center my-8">{title}</h2>
+      <h2 className="text-3xl font-bold text-center my-8">{title}</h2>
       {children}
     </section>
   );
@@ -66,7 +66,7 @@ function Subsection({
 function AboutMe() {
   return (
     <Subsection title="About Me">
-      <p className="text-2xl text-justify">
+      <p className="text-xl text-justify">
         I am a software engineer with a passion for building products that
         make a difference.
       </p>
@@ -80,10 +80,10 @@ function Projects() {
       <ul className="flex flex-col justify-center gap-4">
         <li key="project-1">
           <ProjectCard
-            name="Project 1"
-            url="https://www.google.com"
-            githubUrl="https://www.github.com"
-            description="This is a project"
+            name="StageHunter"
+            url="https://stagehunter.cc"
+            githubUrl="https://github.com/michaelbennett99/stagehunter"
+            description="A daily web game that tests users’ pro cycling knowledge. Built using Typescript and Next.js (frontend), Go (backend), Postgres (database), AWS (hosting) and Cloudflare (DNS)."
           />
         </li>
       </ul>
@@ -103,16 +103,24 @@ function ProjectCard({
   description: string;
 }) {
   return (
-    <div className="flex flex-col">
-      <h3 className="text-2xl font-bold">
+    <div className="space-y-2">
+      <div className="flex flex-row justify-left items-center gap-2">
+        <h3 className="text-2xl font-bold">
+          {
+            url
+            && <Link href={url} className="hover:underline">{name}</Link>
+            || <span>{name}</span>
+          }
+        </h3>
         {
-          url
-          && <Link href={url} className="text-lg">{name}</Link>
-          || <span className="text-lg">{name}</span>
+          githubUrl
+          && <SocialLink
+            href={githubUrl}
+            icon={<FaGithub className="text-lg" />}
+          />
         }
-      </h3>
-      {githubUrl && <SocialLink href={githubUrl} icon={<FaGithub />} />}
-      <p className="text-lg">{description}</p>
+      </div>
+      <p className="text-xl text-justify">{description}</p>
     </div>
   );
 }
