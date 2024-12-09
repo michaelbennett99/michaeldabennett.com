@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
 
 export default function Home() {
   return (
@@ -25,6 +25,10 @@ function Header() {
           href="https://www.linkedin.com/in/michaeldabennett"
           icon={<FaLinkedin />}
         />
+        <SocialLink
+          href="https://www.strava.com/athletes/25477476"
+          icon={<FaStrava />}
+        />
       </nav>
     </header>
   );
@@ -38,7 +42,7 @@ function SocialLink({
   icon: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="text-4xl text-gray-700 hover:text-gray-900">
+    <Link href={href} className="text-4xl text-gray-700 hover:text-gray-900 box-border">
       {icon}
     </Link>
   );
