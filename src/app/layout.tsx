@@ -51,7 +51,7 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-900 dark:text-gray-500 dark:border-gray-800`}
       >
         <header
-          className="text-lg text-bold sticky top-0 border-b border-inherit flex flex-row justify-between items-center px-8 lg:px-16"
+          className="text-lg text-bold sticky top-0 border-b border-inherit flex flex-row justify-between items-center px-8 lg:px-16 bg-white"
         >
           <Link href="/">
             <span className="text-4xl font-bold">
