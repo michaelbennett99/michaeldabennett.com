@@ -18,7 +18,9 @@ function Header() {
   return (
     <header className="pt-16 pb-8 flex flex-col items-center gap-4">
       <h1 className="text-8xl font-bold text-center">Michael Bennett</h1>
-      <h3 className="text-4xl text-center">Software Engineer</h3>
+      <div className="text-4xl text-center" role="doc-subtitle">
+        Software Engineer
+      </div>
       <nav className="flex justify-center gap-4">
         <SocialLink
           href="https://github.com/michaelbennett99"
