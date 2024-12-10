@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
+import { twJoin } from "tailwind-merge";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -48,10 +49,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased dark:bg-gray-900 dark:text-gray-500 dark:border-gray-800`}
+        className={twJoin(
+          `${geistSans.variable} ${geistMono.variable} antialiased`,
+          "bg-white text-gray-950 border-gray-200",
+          "dark:bg-gray-900 dark:text-gray-500 dark:border-gray-800"
+        )}
       >
         <header
-          className="text-lg text-bold sticky top-0 border-b border-inherit flex flex-row justify-between items-center px-8 lg:px-16 bg-white"
+          className="text-lg text-bold sticky top-0 border-b border-inherit flex flex-row justify-between items-center px-8 lg:px-16"
         >
           <Link href="/">
             <span className="text-4xl font-bold">
