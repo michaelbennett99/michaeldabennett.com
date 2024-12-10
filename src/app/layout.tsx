@@ -1,6 +1,5 @@
 "use client";
 
-// import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
@@ -20,15 +19,6 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-
-// export const metadata: Metadata = {
-//   title: "Michael Bennett",
-//   description: "Michael Bennett's personal website",
-//   icons: {
-//     icon: "/favicon.ico",
-//     apple: "/favicon.ico",
-//   }
-// };
 
 export default function RootLayout({
   children,
@@ -68,7 +58,8 @@ function Header() {
     <header
       className={twJoin(
       "text-lg text-bold sticky top-0 border-b",
-      "flex flex-row justify-between items-center"
+      "flex flex-row justify-between items-center",
+      "text-foreground bg-background"
     )}
     >
       <Link href="/" className="px-8 lg:px-16">
