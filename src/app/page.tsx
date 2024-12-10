@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
+import { twJoin } from "tailwind-merge";
 
 export default function Home() {
   return (
@@ -42,7 +43,13 @@ function SocialLink({
   icon: React.ReactNode;
 }) {
   return (
-    <Link href={href} className="text-4xl text-gray-700 hover:text-gray-900 box-border">
+    <Link
+      href={href}
+      className={twJoin(
+        "text-4xl text-gray-700 hover:text-gray-900 box-border",
+        "dark:text-gray-300 dark:hover:text-gray-100"
+      )}
+    >
       {icon}
     </Link>
   );
