@@ -99,7 +99,7 @@ function NavLink({
   href: string;
   pathname: string;
 }) {
-  const isActive = pathname.endsWith(href);
+  const isActive = pathname.endsWith(href) || pathname.includes(href + "/");
 
   return (
     <Link
