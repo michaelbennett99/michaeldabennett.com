@@ -53,8 +53,8 @@ function SocialLink({
     <Link
       href={href}
       className={twJoin(
-        "text-4xl box-border text-gray-700 hover:text-gray-900",
-        "dark:text-gray-300 dark:hover:text-gray-100"
+        "text-4xl box-border",
+        "hover:opacity-80"
       )}
     >
       {icon}
