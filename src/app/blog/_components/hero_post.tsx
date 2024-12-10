@@ -1,5 +1,6 @@
 import { type Author } from "@/interfaces/author";
 import Link from "next/link";
+import Avatar from "@/app/blog/_components/avatar";
 import DateFormatter from "@/app/_components/date_formatter";
 
 type Props = {
@@ -28,9 +29,7 @@ export default function HeroPost({ title, date, excerpt, author, slug }: Props) 
         </div>
         <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
-          <p className="text-xl font-bold">
-            {author.name}
-          </p>
+          <Avatar name={author.name} picture={author.picture} />
         </div>
       </div>
     </section>
