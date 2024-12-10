@@ -75,27 +75,17 @@ function Header() {
           "h-full"
         )}
       >
-        <div className="h-full flex items-center">
-          <NavLink href="/about" pathname={pathname}>About</NavLink>
-        </div>
-        <div className="h-full flex items-center">
-          <NavLink href="/cv" pathname={pathname}>CV</NavLink>
-        </div>
-        <div className="h-full flex items-center">
-          <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
-        </div>
-        <div className="h-full flex items-center">
-          <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
-        </div>
-        <div className="h-full flex items-center">
-          <DarkModeToggle
-            className={twJoin(
-              "px-6",
-              "transition-colors duration-300",
-              "hover:bg-accent hover:text-accent-foreground"
-            )}
-          />
-        </div>
+        <NavLink href="/about" pathname={pathname}>About</NavLink>
+        <NavLink href="/cv" pathname={pathname}>CV</NavLink>
+        <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
+        <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
+        <DarkModeToggle
+          className={twJoin(
+            "px-6",
+            "transition-colors duration-300",
+            "hover:bg-accent hover:text-accent-foreground"
+          )}
+        />
       </nav>
     </header>
   )
