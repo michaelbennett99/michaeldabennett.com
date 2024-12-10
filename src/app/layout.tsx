@@ -106,7 +106,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "text-lg font-bold",
+        "text-lg font-bold relative",
         "py-4 px-2 lg:px-4 2xl:px-8",
         "hover:bg-accent hover:text-accent-foreground",
         "transition-colors duration-300",
