@@ -1,5 +1,7 @@
+import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
+import { SiReaddotcv } from "react-icons/si";
 import { twJoin } from "tailwind-merge";
 
 export default function Home() {
@@ -14,10 +16,10 @@ export default function Home() {
 
 function Header() {
   return (
-    <header className="pt-16 pb-8">
+    <header className="pt-16 pb-8 flex flex-col items-center gap-4">
       <h1 className="text-8xl font-bold text-center">Michael Bennett</h1>
       <h3 className="text-4xl text-center">Software Engineer</h3>
-      <nav className="my-2 flex justify-center gap-4">
+      <nav className="flex justify-center gap-4">
         <SocialLink
           href="https://github.com/michaelbennett99"
           icon={<FaGithub />}
@@ -31,6 +33,11 @@ function Header() {
           icon={<FaStrava />}
         />
       </nav>
+      <Button asChild>
+        <Link href="/resume.pdf" target="_blank">
+          <SiReaddotcv /> Download Resume
+        </Link>
+      </Button>
     </header>
   );
 }
