@@ -59,32 +59,43 @@ function Header() {
   return (
     <header
       className={twJoin(
-      "text-lg text-bold sticky top-0 border-b",
-      "flex flex-row justify-between items-center",
-      "text-foreground bg-background"
-    )}
+        "text-lg text-bold sticky top-0 border-b",
+        "grid grid-cols-[auto,1fr]",
+        "text-foreground bg-background",
+      )}
     >
-      <Link href="/" className="px-8 lg:px-16">
+      <Link href="/" className="px-8 lg:px-16 py-4 flex items-center">
         <span className="text-4xl font-bold">
           Michael Bennett
         </span>
       </Link>
       <nav
         className={cn(
-          "flex flex-row justify-around items-stretch",
+          "flex flex-row justify-end",
+          "h-full"
         )}
       >
-        <NavLink href="/about" pathname={pathname}>About</NavLink>
-        <NavLink href="/cv" pathname={pathname}>CV</NavLink>
-        <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
-        <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
-        <DarkModeToggle
-          className={twJoin(
-            "px-6",
-            "transition-colors duration-300",
-            "hover:bg-accent hover:text-accent-foreground"
-          )}
-        />
+        <div className="h-full flex items-center">
+          <NavLink href="/about" pathname={pathname}>About</NavLink>
+        </div>
+        <div className="h-full flex items-center">
+          <NavLink href="/cv" pathname={pathname}>CV</NavLink>
+        </div>
+        <div className="h-full flex items-center">
+          <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
+        </div>
+        <div className="h-full flex items-center">
+          <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
+        </div>
+        <div className="h-full flex items-center">
+          <DarkModeToggle
+            className={twJoin(
+              "px-6",
+              "transition-colors duration-300",
+              "hover:bg-accent hover:text-accent-foreground"
+            )}
+          />
+        </div>
       </nav>
     </header>
   )
@@ -105,7 +116,7 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "text-lg font-bold flex-grow text-center relative",
+        "text-lg font-bold relative",
         "py-4 px-1 md:px-2 lg:px-4 2xl:px-8",
         "hover:bg-accent hover:text-accent-foreground",
         "transition-colors duration-300",
@@ -113,6 +124,7 @@ function NavLink({
         "after:bg-current after:transition-all after:duration-300",
         isActive ? "after:w-full" : "after:w-0",
         "after:-translate-x-1/2",
+        "flex items-center h-full"
       )}
     >
       {children}
@@ -129,7 +141,13 @@ function DarkModeToggle({ className }: { className?: string }) {
   }
 
   return (
-    <button onClick={toggle} className={className}>
+    <button
+      onClick={toggle}
+      className={cn(
+        "py-4 h-full",
+        className
+      )}
+    >
       {
         isDarkMode
         ? <LuMoon />
