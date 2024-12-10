@@ -6,7 +6,7 @@ export type Post = {
     date: string;
     author: Author;
     coverImage?: string;
-    excerpt?: string;
+    excerpt: string;
     content: string;
     preview?: string
 }
