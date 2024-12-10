@@ -4,7 +4,7 @@ import { twJoin } from "tailwind-merge";
 
 export default function Home() {
   return (
-    <main className="divide-solid divide-y divide-gray-200 mx-8 lg:mx-auto lg:max-w-4xl">
+    <main className="divide-solid divide-y mx-8 lg:mx-auto lg:max-w-4xl">
       <Header />
       <AboutMe />
       <Projects />
@@ -46,7 +46,7 @@ function SocialLink({
     <Link
       href={href}
       className={twJoin(
-        "text-4xl text-gray-700 hover:text-gray-900 box-border",
+        "text-4xl box-border text-gray-700 hover:text-gray-900",
         "dark:text-gray-300 dark:hover:text-gray-100"
       )}
     >
