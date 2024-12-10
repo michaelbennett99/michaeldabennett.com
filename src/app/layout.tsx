@@ -81,7 +81,7 @@ function Header() {
         <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
         <DarkModeToggle
           className={twJoin(
-            "px-6",
+            "px-2 md:px-4 lg:px-8 2xl:px-16",
             "transition-colors duration-300",
             "hover:bg-accent hover:text-accent-foreground"
           )}
@@ -106,8 +106,8 @@ function NavLink({
     <Link
       href={href}
       className={cn(
-        "text-lg font-bold relative",
-        "py-4 px-1 md:px-2 lg:px-4 2xl:px-8",
+        "text-lg font-bold",
+        "py-4 px-2 lg:px-4 2xl:px-8",
         "hover:bg-accent hover:text-accent-foreground",
         "transition-colors duration-300",
         "after:absolute after:bottom-0 after:left-1/2 after:h-[2px]",
