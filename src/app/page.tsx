@@ -1,15 +1,19 @@
-import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
 import { SiReaddotcv } from "react-icons/si";
 import { twJoin } from "tailwind-merge";
 
+import { Button } from "@/components/ui/button";
+import Container from "@/app/_components/container";
+
 export default function Home() {
   return (
-    <main className="divide-solid divide-y mx-8 lg:mx-auto lg:max-w-4xl">
-      <Header />
-      <AboutMe />
-      <Projects />
+    <main>
+      <Container className="divide-solid divide-y">
+        <Header />
+        <AboutMe />
+        <Projects />
+      </Container>
     </main>
   );
 }
