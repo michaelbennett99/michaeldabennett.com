@@ -58,6 +58,7 @@ function SocialLink({
         "text-4xl box-border",
         "hover:opacity-80"
       )}
+      target="_blank"
     >
       {icon}
     </Link>
