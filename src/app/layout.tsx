@@ -5,10 +5,10 @@ import localFont from "next/font/local";
 import "./globals.css";
 import Link from "next/link";
 import { twJoin } from "tailwind-merge";
-import { useDarkMode } from "usehooks-ts";
 import { LuMoon, LuSun } from "react-icons/lu";
-import { usePathname } from "next/navigation";
 import { ThemeProvider, useTheme } from "next-themes";
+import { cn } from "@/lib/utils";
+import { usePathname } from "next/navigation";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -63,6 +63,8 @@ export default function RootLayout({
 }
 
 function Header() {
+  const pathname = usePathname();
+
   return (
     <header
       className={twJoin(
@@ -76,16 +78,19 @@ function Header() {
         </span>
       </Link>
       <nav
-        className="flex flex-row justify-around items-stretch"
+        className={cn(
+          "flex flex-row justify-around items-stretch",
+        )}
       >
-        <NavLink href="/about" pathname={""}>About</NavLink>
-        <NavLink href="/cv" pathname={""}>CV</NavLink>
-        <NavLink href="/blog" pathname={""}>Blog</NavLink>
-        <NavLink href="/contact" pathname={""}>Contact</NavLink>
+        <NavLink href="/about" pathname={pathname}>About</NavLink>
+        <NavLink href="/cv" pathname={pathname}>CV</NavLink>
+        <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
+        <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
         <DarkModeToggle
           className={twJoin(
             "px-6",
-            "transition-colors duration-300"
+            "transition-colors duration-300",
+            "hover:bg-accent hover:text-accent-foreground"
           )}
         />
       </nav>
@@ -107,9 +112,15 @@ function NavLink({
   return (
     <Link
       href={href}
-      className={twJoin(
-        "text-lg font-bold py-4 px-1 md:px-2 lg:px-4 2xl:px-8",
-        "transition-colors duration-300 flex-grow text-center",
+      className={cn(
+        "text-lg font-bold flex-grow text-center relative",
+        "py-4 px-1 md:px-2 lg:px-4 2xl:px-8",
+        "hover:bg-accent hover:text-accent-foreground",
+        "transition-colors duration-300",
+        "after:absolute after:bottom-0 after:left-1/2 after:h-[2px]",
+        "after:bg-current after:transition-all after:duration-300",
+        isActive ? "after:w-full" : "after:w-0",
+        "after:-translate-x-1/2",
       )}
     >
       {children}
