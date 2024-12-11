@@ -1,7 +1,12 @@
+import Container from "@/components/container";
+import PageHeading from "@/components/page_heading";
+
 export default function CV() {
   return (
     <main>
-      <h1>CV</h1>
+      <Container>
+        <PageHeading title="CV" />
+      </Container>
     </main>
   );
 }

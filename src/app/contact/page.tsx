@@ -1,7 +1,12 @@
+import Container from "@/components/container";
+import PageHeading from "@/components/page_heading";
+
 export default function Contact() {
   return (
     <main>
-      <h1>Contact</h1>
+      <Container>
+        <PageHeading title="Contact" />
+      </Container>
     </main>
   );
 }

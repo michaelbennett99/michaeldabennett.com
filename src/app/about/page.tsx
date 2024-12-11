@@ -1,7 +1,12 @@
+import Container from "@/components/container";
+import PageHeading from "@/components/page_heading";
+
 export default function About() {
   return (
     <main>
-      <h1>About</h1>
+      <Container>
+        <PageHeading title="About" />
+      </Container>
     </main>
   );
 }
