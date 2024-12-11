@@ -18,7 +18,7 @@ export default function DarkModeToggle({ className }: { className?: string }) {
         className
       )}
     >
-      {isDarkMode ? <LuSun /> : <LuMoon />}
+      {isDarkMode ? <LuMoon /> : <LuSun />}
     </button>
   )
 }
