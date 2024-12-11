@@ -4,7 +4,7 @@ import { SiReaddotcv } from "react-icons/si";
 import { twJoin } from "tailwind-merge";
 
 import { Button } from "@/components/ui/button";
-import Container from "@/app/_components/container";
+import Container from "@/components/container";
 
 export default function Home() {
   return (

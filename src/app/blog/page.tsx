@@ -2,7 +2,7 @@ import { getAllPosts } from "@/lib/api";
 import { CMS_NAME } from "@/lib/constants";
 import HeroPost from "./_components/hero_post";
 import MorePosts from "./_components/more_posts";
-import Container from "../_components/container";
+import Container from "../../components/container";
 
 export default function Blog() {
   const allPosts = getAllPosts();
