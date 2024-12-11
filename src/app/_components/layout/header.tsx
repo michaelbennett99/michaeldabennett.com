@@ -30,7 +30,7 @@ export default function Header() {
         <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
         <DarkModeToggle
           className={cn(
-            "px-2 md:px-4 lg:px-8 2xl:px-16",
+            "px-2 md:px-4 lg:px-8",
             "transition-colors duration-300",
             "hover:bg-accent hover:text-accent-foreground"
           )}
