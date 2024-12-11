@@ -2,8 +2,8 @@ import { usePathname } from "next/navigation";
 import Link from "next/link";
 
 import { cn } from "@/lib/utils";
-import NavLink from "./nav_link";
-import DarkModeToggle from "./dark_mode_toggle";
+import NavLink from "@/components/nav_link";
+import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
 
 export default function Header() {
   const pathname = usePathname();
