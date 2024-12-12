@@ -29,7 +29,7 @@ export default function EducationCard({
   return (
     <div className="flex flex-col">
       <CardHeader>
-        <div className="flex flex-row justify-between gap-2">
+        <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
           <h3>
             <strong>{degree}</strong>, {institution}, {location}
           </h3>
