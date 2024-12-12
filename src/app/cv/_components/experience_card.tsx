@@ -22,7 +22,7 @@ export default function ExperienceCard({
   return (
     <div className="flex flex-col">
       <header className="flex flex-col">
-        <div className="flex flex-row justify-between gap-2">
+        <div className="flex flex-row justify-between gap-2 text-lg">
           <h3>
             <strong>{title}</strong>
           </h3>
@@ -30,13 +30,13 @@ export default function ExperienceCard({
             {start_date} - {end_date}
           </p>
         </div>
-        <p className="text-sm">
+        <p className="text-base">
           <strong>{employer}, {location}</strong>
         </p>
       </header>
-      <main className="flex flex-col text-sm text-muted-foreground">
+      <main className="flex flex-col text-base">
         <p>{description}</p>
-        <Bullets bullets={bullets} />
+        <Bullets bullets={bullets} className="text-muted-foreground" />
       </main>
     </div>
   );
