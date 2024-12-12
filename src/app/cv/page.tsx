@@ -95,6 +95,18 @@ export default function CV() {
                 "Developed visualisation software using Python and matplotlib to produce custom publication-ready graphs (including Manhattan plots) and tables, saving development time for other team-members and allowing rapid automated edits prior to submission and resubmission.",
               ]}
             />
+            <ExperienceCard
+              title="Operations Research Intern"
+              employer="Department for Work and Pensions, HM Government"
+              location="London, UK"
+              start_date="Jul 2019"
+              end_date="Sep 2019"
+              description="Researched the extent to which the demographic and socioeconomic backgrounds of working age benefit claimants could predict whether they would contact their administrative authority."
+              bullets={[
+                "Worked with colleagues to gain access to source data, built a working database for analysis from source data using SQL, and automated and documented this process for use by future researchers.",
+                "Performed exploratory analysis, applied machine learning techniques to develop forecasting methodology and produced visualisations using R."
+              ]}
+            />
           </Section>
           <Section title="Leadership Experience">
             <Card />
