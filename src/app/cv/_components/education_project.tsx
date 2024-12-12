@@ -1,8 +1,8 @@
 import Bullets from "./bullets";
 
 type Props = {
-  title: string;
-  bullets: string[];
+  title: React.ReactNode;
+  bullets: React.ReactNode[];
 };
 
 export default function EducationProject({ title, bullets }: Props) {

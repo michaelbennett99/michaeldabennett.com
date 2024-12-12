@@ -7,7 +7,7 @@ type Props = {
   start_date: string;
   end_date: string;
   description: string;
-  bullets: string[];
+  bullets: React.ReactNode[];
 };
 
 export default function ExperienceCard({
@@ -22,7 +22,7 @@ export default function ExperienceCard({
   return (
     <div className="flex flex-col">
       <header className="flex flex-col">
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-row justify-between gap-2">
           <h3>
             <strong>{title}</strong>
           </h3>

@@ -9,8 +9,8 @@ type Props = {
   grade?: string;
   modules?: string[];
   project?: {
-    title: string;
-    bullets: string[];
+    title: React.ReactNode;
+    bullets: React.ReactNode[];
   };
 };
 
@@ -26,7 +26,7 @@ export default function EducationCard({
 }: Props) {
   return (
     <div className="flex flex-col">
-      <header className="flex flex-row justify-between">
+      <header className="flex flex-row justify-between gap-2">
         <h3>
           <strong>{degree}</strong>, {institution}, {location}
         </h3>
@@ -35,8 +35,16 @@ export default function EducationCard({
         </p>
       </header>
       <main className="flex flex-col text-sm text-muted-foreground">
-        {grade && <p>Grade: {grade}</p>}
-        {modules && <p>Selected Modules: {modules.join(", ")}</p>}
+        {grade && (
+          <p>
+            <span className="underline">Grade:</span> {grade}
+          </p>
+        )}
+        {modules && (
+          <p>
+            <span className="underline">Selected Modules:</span> {modules.join(", ")}
+          </p>
+        )}
         {project && (
           <EducationProject title={project.title} bullets={project.bullets} />
         )}
