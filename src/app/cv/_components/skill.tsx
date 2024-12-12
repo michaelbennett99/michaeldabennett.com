@@ -18,7 +18,7 @@ export default function Skill({
   proficiency: Proficiency;
 }) {
   const proficiency_color = {
-    Beginner: "text-red-600",
+    Beginner: "text-yellow-600",
     Intermediate: "text-green-600",
     Advanced: "text-purple-600",
   }[proficiency];
