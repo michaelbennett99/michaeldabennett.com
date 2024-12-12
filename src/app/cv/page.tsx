@@ -137,6 +137,13 @@ export default function CV() {
               authorString="[Sixth Author] Becker, J. et al."
               journalString="Nature Human Behaviour 5, 1744-1758"
             />
+            <PublicationCard
+              title="Family-based genome-wide association study designs for increased power and robustness"
+              year="2025"
+              authorString="J. Guan, T. Tan, S. M. Nehzati, M. Bennett, P. Turley, D. J. Benjamin, and A. Strudwick Young"
+              journalString="Nature Genetics"
+              className="hidden"
+            />
           </Section>
           <Section title="Independent Projects">
             <Card />
