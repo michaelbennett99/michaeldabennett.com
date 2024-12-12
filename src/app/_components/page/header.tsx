@@ -1,9 +1,7 @@
 import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
-import { SiReaddotcv } from "react-icons/si";
-import Link from "next/link";
 
-import { Button } from "@/components/ui/button";
 import SocialLink from "@/components/social_link";
+import DownloadCV from "@/components/download_cv";
 
 export default function Header() {
   return (
@@ -26,11 +24,7 @@ export default function Header() {
           icon={<FaStrava />}
         />
       </nav>
-      <Button asChild>
-        <Link href="/resume.pdf" target="_blank">
-          <SiReaddotcv /> Download Resume
-        </Link>
-      </Button>
+      <DownloadCV />
     </header>
   );
 }
