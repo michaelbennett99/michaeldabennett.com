@@ -1,16 +1,18 @@
 import Link from "next/link";
 
-export default function SocialLink({
-  href,
-  icon,
-}: {
+import { cn } from "@/lib/utils";
+
+type Props = {
   href: string;
   icon: React.ReactNode;
-}) {
+  className?: string;
+}
+
+export default function SocialLink({ href, icon, className }: Props) {
   return (
     <Link
       href={href}
-      className="box-border hover:opacity-80"
+      className={cn("box-border hover:opacity-80", className)}
       target="_blank"
     >
       {icon}

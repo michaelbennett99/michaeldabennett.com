@@ -1,15 +1,14 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
-
-
+import { FaGithub } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
 import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
+import SocialLink from "@/components/social_link";
 import NavBar from "./nav_bar";
+import NavButton from "./nav_button";
 
 export default function Header() {
-  const pathname = usePathname();
-
   return (
     <header
       className={cn(
@@ -26,6 +25,12 @@ export default function Header() {
       <div className="flex flex-row justify-end h-full">
         <NavBar />
         <DarkModeToggle />
+        <NavButton >
+          <SocialLink
+            href="https://github.com/michaelbennett99/michaeldabennett.com"
+            icon={<FaGithub />}
+          />
+        </NavButton>
       </div>
     </header>
   )
