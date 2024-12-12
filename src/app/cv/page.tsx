@@ -2,13 +2,12 @@ import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
 
 import Section from "./_components/section";
-import Card from "./_components/card";
 import EducationCard from "./_components/education_card";
 import ExperienceCard from "./_components/experience_card";
 import PublicationCard from "./_components/publication_card";
 import ProjectCard from "./_components/project_card";
 import Skills from "./_components/skills";
-
+import AwardsCard from "./_components/awards_card";
 export default function CV() {
   return (
     <main>
@@ -170,7 +169,26 @@ export default function CV() {
             <Skills />
           </Section>
           <Section title="Awards">
-            <Card />
+            <AwardsCard
+              title="Forethought Foundation Dissertation Commendation Award"
+              year="2020"
+              description="Awarded to dissertations that communicate insights relevant to the problem of global priority-setting."
+            />
+            <AwardsCard
+              title="Adam Smith Dissertation Prize"
+              year="2020"
+              description="Awarded to the best dissertation among all University of Cambridge Economics students."
+            />
+            <AwardsCard
+              title="Wright Prize"
+              year="2019"
+              description="Awarded for a First Class Examination result of special merit in official University Examinations."
+            />
+            <AwardsCard
+              title="St John’s College Pre-Admissions Prize"
+              year="2017"
+              description="Awarded for exceptional academic achievements prior to admission to St John’s College, Cambridge."
+            />
           </Section>
         </div>
       </Container>
