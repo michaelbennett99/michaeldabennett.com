@@ -40,14 +40,14 @@ export default function Header() {
           ))}
         </div>
         <DropdownMenu>
-          <DropdownMenuTrigger>
+          <DropdownMenuTrigger asChild>
             <NavButton className="md:hidden">
               <LuMenu />
             </NavButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
             {links.map((link) => (
-              <DropdownMenuItem>
+              <DropdownMenuItem key={link.href}>
                 <DropdownLink href={link.href}>{link.label}</DropdownLink>
               </DropdownMenuItem>
             ))}
