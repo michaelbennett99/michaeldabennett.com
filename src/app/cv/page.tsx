@@ -1,9 +1,11 @@
 import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
+
 import Section from "./_components/section";
 import Card from "./_components/card";
 import EducationCard from "./_components/education_card";
 import ExperienceCard from "./_components/experience_card";
+import PublicationCard from "./_components/publication_card";
 
 export default function CV() {
   return (
@@ -123,7 +125,18 @@ export default function CV() {
             />
           </Section>
           <Section title="Publications">
-            <Card />
+            <PublicationCard
+              title="Polygenic prediction within and between families from a 3-million-person GWAS of educational attainment"
+              year="2022"
+              authorString="[Fifth Author] Okbay, A. et al."
+              journalString="Nature Genetics 54, 437-449"
+            />
+            <PublicationCard
+              title="Resource Profile and User Guide of the Polygenic Index Repository"
+              year="2021"
+              authorString="[Sixth Author] Becker, J. et al."
+              journalString="Nature Human Behaviour 5, 1744-1758"
+            />
           </Section>
           <Section title="Independent Projects">
             <Card />
