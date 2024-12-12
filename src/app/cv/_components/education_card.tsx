@@ -28,15 +28,18 @@ export default function EducationCard({
 }: Props) {
   return (
     <div className="flex flex-col">
-      <CardHeader>
-        <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
+      <CardHeader className="flex flex-col md:flex-row md:justify-between md:gap-2">
+        <div className="flex flex-col">
           <h3>
-            <strong>{degree}</strong>, {institution}, {location}
+            <strong>{degree}</strong>
           </h3>
-          <p>
-            {start_year} - {end_year}
+          <p className="text-base">
+            <strong>{institution}, {location}</strong>
           </p>
         </div>
+        <p className="text-base">
+          {start_year} - {end_year}
+        </p>
       </CardHeader>
       <CardBody>
         {grade && (

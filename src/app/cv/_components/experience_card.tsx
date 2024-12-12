@@ -25,16 +25,18 @@ export default function ExperienceCard({
     <div className="flex flex-col">
       <CardHeader className="flex flex-col">
         <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
-          <h3>
-            <strong>{title}</strong>
-          </h3>
-          <p>
+          <div className="flex flex-col">
+            <h3>
+              <strong>{title}</strong>
+            </h3>
+            <p className="text-base">
+              <strong>{employer}, {location}</strong>
+            </p>
+          </div>
+          <p className="text-base">
             {start_date} - {end_date}
           </p>
         </div>
-        <p className="text-base">
-          <strong>{employer}, {location}</strong>
-        </p>
         <p className="text-base">{description}</p>
       </CardHeader>
       <CardBody>
