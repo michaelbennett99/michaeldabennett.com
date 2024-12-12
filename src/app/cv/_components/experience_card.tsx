@@ -1,4 +1,6 @@
 import Bullets from "./bullets";
+import CardHeader from "./card_header";
+import CardBody from "./card_body";
 
 type Props = {
   title: string;
@@ -21,8 +23,8 @@ export default function ExperienceCard({
 }: Props) {
   return (
     <div className="flex flex-col">
-      <header className="flex flex-col">
-        <div className="flex flex-row justify-between gap-2 text-lg">
+      <CardHeader className="flex flex-col">
+        <div className="flex flex-row justify-between gap-2">
           <h3>
             <strong>{title}</strong>
           </h3>
@@ -33,11 +35,11 @@ export default function ExperienceCard({
         <p className="text-base">
           <strong>{employer}, {location}</strong>
         </p>
-      </header>
-      <main className="flex flex-col text-base">
-        <p>{description}</p>
+        <p className="text-base">{description}</p>
+      </CardHeader>
+      <CardBody>
         <Bullets bullets={bullets} className="text-muted-foreground" />
-      </main>
+      </CardBody>
     </div>
   );
 }

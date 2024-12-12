@@ -1,3 +1,5 @@
+import CardHeader from "./card_header";
+import CardBody from "./card_body";
 import EducationProject from "./education_project";
 
 type Props = {
@@ -26,15 +28,17 @@ export default function EducationCard({
 }: Props) {
   return (
     <div className="flex flex-col">
-      <header className="flex flex-row justify-between gap-2 text-lg">
-        <h3>
-          <strong>{degree}</strong>, {institution}, {location}
-        </h3>
-        <p>
-          {start_year} - {end_year}
-        </p>
-      </header>
-      <main className="flex flex-col text-base text-muted-foreground">
+      <CardHeader>
+        <div className="flex flex-row justify-between gap-2">
+          <h3>
+            <strong>{degree}</strong>, {institution}, {location}
+          </h3>
+          <p>
+            {start_year} - {end_year}
+          </p>
+        </div>
+      </CardHeader>
+      <CardBody>
         {grade && (
           <p>
             <span className="underline">Grade:</span> {grade}
@@ -48,7 +52,7 @@ export default function EducationCard({
         {project && (
           <EducationProject title={project.title} bullets={project.bullets} />
         )}
-      </main>
+      </CardBody>
     </div>
   );
 }
