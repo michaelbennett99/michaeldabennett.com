@@ -21,7 +21,7 @@ import Skill from "./skill";
 
 export default function Skills() {
   return (
-    <CardBody className="grid grid-cols-5 gap-2 justify-items-center">
+    <CardBody className="grid grid-cols-3 md:grid-cols-5 gap-2 justify-items-center">
       <Skill
         icon={<SiTypescript />}
         name="TypeScript"
