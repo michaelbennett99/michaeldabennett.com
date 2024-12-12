@@ -1,6 +1,6 @@
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
 import { LuMoon, LuSun } from "react-icons/lu";
+import NavButton from "./nav_button";
 
 export default function DarkModeToggle({ className }: { className?: string }) {
   const { theme, setTheme } = useTheme();
@@ -11,14 +11,8 @@ export default function DarkModeToggle({ className }: { className?: string }) {
   }
 
   return (
-    <button
-      onClick={toggle}
-      className={cn(
-        "py-4 h-full",
-        className
-      )}
-    >
+    <NavButton onClick={toggle} className={className}>
       {isDarkMode ? <LuMoon /> : <LuSun />}
-    </button>
+    </NavButton>
   )
 }
