@@ -109,7 +109,18 @@ export default function CV() {
             />
           </Section>
           <Section title="Leadership Experience">
-            <Card />
+            <ExperienceCard
+              title="Project Manager & Treasurer"
+              employer="Effective Altruism Cambridge"
+              location="Cambridge, UK"
+              start_date="Mar 2019"
+              end_date="Feb 2020"
+              description="Student-run organisation at the University of Cambridge."
+              bullets={[
+                "Chaired leadership committee meetings and managed a team of 10 other volunteers to plan and run 40 events, achieving 20% increase in attendance compared to the previous year.",
+                "Authored grant applications leading to £5000 in funding.",
+              ]}
+            />
           </Section>
           <Section title="Publications">
             <Card />
