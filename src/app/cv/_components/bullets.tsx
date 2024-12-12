@@ -1,11 +1,13 @@
 export default function Bullets({ bullets }: { bullets: string[] }) {
   return (
-    <ul>
-      {bullets.map((bullet) => (
-        <li key={bullet} className="list-disc list-inside">
-          {bullet}
-        </li>
-      ))}
-    </ul>
+    <div className="pl-4">
+      <ul className="list-disc list-outside">
+        {bullets.map((bullet) => (
+          <li key={bullet}>
+            {bullet}
+          </li>
+        ))}
+      </ul>
+    </div>
   );
 }
