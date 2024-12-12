@@ -1,15 +1,18 @@
+import { cn } from "@/lib/utils";
+
 type Props = {
   title: string;
   year: string;
   authorString: string;
   journalString: string;
+  className?: string;
 }
 
 export default function PublicationCard(
-  { title, year, authorString, journalString }: Props
+  { title, year, authorString, journalString, className }: Props
 ) {
   return (
-    <p className="text-base">
+    <p className={cn("text-base", className)}>
       <strong>{authorString} ({year}).</strong> <i>{title}</i>. {journalString}.
     </p>
   );
