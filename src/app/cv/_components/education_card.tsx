@@ -26,7 +26,7 @@ export default function EducationCard({
 }: Props) {
   return (
     <div className="flex flex-col">
-      <header className="flex flex-row justify-between gap-2">
+      <header className="flex flex-row justify-between gap-2 text-lg">
         <h3>
           <strong>{degree}</strong>, {institution}, {location}
         </h3>
@@ -34,7 +34,7 @@ export default function EducationCard({
           {start_year} - {end_year}
         </p>
       </header>
-      <main className="flex flex-col text-sm text-muted-foreground">
+      <main className="flex flex-col text-base text-muted-foreground">
         {grade && (
           <p>
             <span className="underline">Grade:</span> {grade}
