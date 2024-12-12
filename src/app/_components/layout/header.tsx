@@ -14,6 +14,7 @@ import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
 import NavButton from "./nav_button";
 import NavLink from "@/components/nav_link";
 import DropdownLink from "@/components/dropdown_link";
+
 export default function Header() {
   const pathname = usePathname();
 
@@ -34,10 +35,9 @@ export default function Header() {
         className="flex flex-row justify-end h-full"
       >
         <div className="hidden md:flex flex-row">
-          <NavLink href="/about" pathname={pathname}>About</NavLink>
-          <NavLink href="/cv" pathname={pathname}>CV</NavLink>
-          <NavLink href="/blog" pathname={pathname}>Blog</NavLink>
-          <NavLink href="/contact" pathname={pathname}>Contact</NavLink>
+          {links.map((link) => (
+            <NavLink href={link.href} pathname={pathname}>{link.label}</NavLink>
+          ))}
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger>
@@ -46,18 +46,11 @@ export default function Header() {
             </NavButton>
           </DropdownMenuTrigger>
           <DropdownMenuContent>
-            <DropdownMenuItem>
-              <DropdownLink href="/about">About</DropdownLink>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <DropdownLink href="/cv">CV</DropdownLink>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <DropdownLink href="/blog">Blog</DropdownLink>
-            </DropdownMenuItem>
-            <DropdownMenuItem>
-              <DropdownLink href="/contact">Contact</DropdownLink>
-            </DropdownMenuItem>
+            {links.map((link) => (
+              <DropdownMenuItem>
+                <DropdownLink href={link.href}>{link.label}</DropdownLink>
+              </DropdownMenuItem>
+            ))}
           </DropdownMenuContent>
         </DropdownMenu>
         <DarkModeToggle />
@@ -65,3 +58,10 @@ export default function Header() {
     </header>
   )
 }
+
+const links = [
+  { href: "/about", label: "About" },
+  { href: "/cv", label: "CV" },
+  { href: "/blog", label: "Blog" },
+  { href: "/contact", label: "Contact" },
+]
