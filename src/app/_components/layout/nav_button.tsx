@@ -1,12 +1,12 @@
 import { cn } from "@/lib/utils";
+import { ButtonHTMLAttributes } from "react";
 
-type Props = {
+type Props = ButtonHTMLAttributes<HTMLButtonElement> & {
   children: React.ReactNode;
-  onClick?: () => void;
   className?: string;
 };
 
-export default function NavButton({ children, onClick, className }: Props) {
+export default function NavButton({ children, className, ...props }: Props) {
   return (
     <button
       className={cn(
@@ -14,7 +14,7 @@ export default function NavButton({ children, onClick, className }: Props) {
         "transition-colors duration-300",
         className
       )}
-      onClick={onClick}
+      {...props}
     >
       {children}
     </button>
