@@ -25,6 +25,14 @@ export default function CV() {
                 "Algorithms",
                 "Deep Learning",
               ]}
+              project={{
+                title: "Example Project: Object detection of cars from satellite images using Deep Learning.",
+                bullets: [
+                  "Trained, fine-tuned and evaluated YOLOv8n/s/m object detection models on aerial images.",
+                  "Used remote GPU rented via vast.ai, initialised using custom Docker image, increasing training speed over 100x at cost under $10.",
+                  "Wrote custom dataloaders in python to download large image datasets on remote servers at maximal speed, reducing GPU downtime cost.",
+                ],
+              }}
             />
             <EducationCard
               degree="BA Economics"
