@@ -7,6 +7,7 @@ import EducationCard from "./_components/education_card";
 import ExperienceCard from "./_components/experience_card";
 import PublicationCard from "./_components/publication_card";
 import ProjectCard from "./_components/project_card";
+import Skills from "./_components/skills";
 
 export default function CV() {
   return (
@@ -161,7 +162,7 @@ export default function CV() {
             />
           </Section>
           <Section title="Skills">
-            <Card />
+            <Skills />
           </Section>
           <Section title="Awards">
             <Card />
