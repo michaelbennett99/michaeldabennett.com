@@ -1,13 +1,19 @@
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 
-import { cn } from "@/lib/utils";
-import NavLink from "@/components/nav_link";
-import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
-import { DropdownMenu, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { LuMenu } from "react-icons/lu";
-import NavButton from "./nav_button";
 
+import { cn } from "@/lib/utils";
+import {
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
+import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
+import NavButton from "./nav_button";
+import NavLink from "@/components/nav_link";
+import DropdownLink from "@/components/dropdown_link";
 export default function Header() {
   const pathname = usePathname();
 
@@ -39,6 +45,20 @@ export default function Header() {
               <LuMenu />
             </NavButton>
           </DropdownMenuTrigger>
+          <DropdownMenuContent>
+            <DropdownMenuItem>
+              <DropdownLink href="/about">About</DropdownLink>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <DropdownLink href="/cv">CV</DropdownLink>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <DropdownLink href="/blog">Blog</DropdownLink>
+            </DropdownMenuItem>
+            <DropdownMenuItem>
+              <DropdownLink href="/contact">Contact</DropdownLink>
+            </DropdownMenuItem>
+          </DropdownMenuContent>
         </DropdownMenu>
         <DarkModeToggle />
       </nav>
