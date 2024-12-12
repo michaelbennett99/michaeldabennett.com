@@ -36,7 +36,13 @@ export default function Header() {
       >
         <div className="hidden md:flex flex-row">
           {links.map((link) => (
-            <NavLink href={link.href} pathname={pathname}>{link.label}</NavLink>
+            <NavLink
+              href={link.href}
+              pathname={pathname}
+              key={link.href}
+            >
+              {link.label}
+            </NavLink>
           ))}
         </div>
         <DropdownMenu>
