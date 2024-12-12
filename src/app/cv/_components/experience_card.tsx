@@ -24,7 +24,7 @@ export default function ExperienceCard({
   return (
     <div className="flex flex-col">
       <CardHeader className="flex flex-col">
-        <div className="flex flex-row justify-between gap-2">
+        <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
           <h3>
             <strong>{title}</strong>
           </h3>
