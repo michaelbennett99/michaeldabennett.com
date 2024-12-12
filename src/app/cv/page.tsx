@@ -8,12 +8,17 @@ import PublicationCard from "./_components/publication_card";
 import ProjectCard from "./_components/project_card";
 import Skills from "./_components/skills";
 import AwardsCard from "./_components/awards_card";
+import DownloadCV from "@/components/download_cv";
+
 export default function CV() {
   return (
     <main>
       <Container>
         <PageHeading title="CV" />
-        <div className="text-justify">
+        <div className="flex justify-center my-8">
+          <DownloadCV />
+        </div>
+        <div className="mt-8 mb-16">
           <Section title="Education">
             <EducationCard
               degree="MA Economics"
