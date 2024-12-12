@@ -5,8 +5,7 @@ import Link from "next/link";
 import { cn } from "@/lib/utils";
 
 import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
-import NavLink from "@/components/nav_link";
-import NavBarDropdown from "./nav_bar_dropdown";
+import NavBar from "./nav_bar";
 
 export default function Header() {
   const pathname = usePathname();
@@ -24,30 +23,10 @@ export default function Header() {
           Michael Bennett
         </span>
       </Link>
-      <nav
-        className="flex flex-row justify-end h-full"
-      >
-        <div className="hidden md:flex flex-row">
-          {links.map((link) => (
-            <NavLink
-              href={link.href}
-              pathname={pathname}
-              key={link.href}
-            >
-              {link.label}
-            </NavLink>
-          ))}
-        </div>
-        <NavBarDropdown links={links} />
+      <div className="flex flex-row justify-end h-full">
+        <NavBar />
         <DarkModeToggle />
-      </nav>
+      </div>
     </header>
   )
 }
-
-const links = [
-  { href: "/about", label: "About" },
-  { href: "/cv", label: "CV" },
-  { href: "/blog", label: "Blog" },
-  { href: "/contact", label: "Contact" },
-]
