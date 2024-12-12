@@ -11,7 +11,7 @@ export default function AwardsCard({ title, year, description }: Props) {
   return (
     <div>
       <CardHeader>
-        <div className="flex flex-row justify-between">
+        <div className="flex flex-col md:flex-row md:justify-between md:gap-2">
           <div><strong>{title}</strong></div>
           <div>{year}</div>
         </div>
