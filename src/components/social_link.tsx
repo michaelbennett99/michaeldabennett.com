@@ -10,7 +10,7 @@ export default function SocialLink({
   return (
     <Link
       href={href}
-      className="text-4xl box-border hover:opacity-80"
+      className="box-border hover:opacity-80"
       target="_blank"
     >
       {icon}
