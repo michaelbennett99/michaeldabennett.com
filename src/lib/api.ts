@@ -69,6 +69,8 @@ export function getEducationBySlug(slug: string) {
 export function getAllEducation(): Education[] {
   const slugs = getEducationSlugs();
   const education = slugs.map((slug) => getEducationBySlug(slug));
+  // Sort by end_year in descending order
+  education.sort((a, b) => b.end_year - a.end_year);
   return education;
 }
 
@@ -89,5 +91,12 @@ export function getExperienceBySlug(slug: string) {
 export function getAllExperience(): Experience[] {
   const slugs = getExperienceSlugs();
   const experience = slugs.map((slug) => getExperienceBySlug(slug));
+  // Sort by end_date in descending order
+  experience.sort((a, b) => {
+    // Convert date strings to comparable values
+    const dateA = new Date(a.end_date);
+    const dateB = new Date(b.end_date);
+    return dateB.getTime() - dateA.getTime();
+  });
   return experience;
 }
