@@ -12,8 +12,10 @@ import {
   SiJulia,
   SiHaskell,
   SiCplusplus,
-  SiGnubash
+  SiGnubash,
+  SiPostgresql
 } from "react-icons/si";
+import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
 
 import CardBody from "./card_body";
@@ -75,6 +77,16 @@ export default function Skills() {
       <Skill
         icon={<SiGnubash />}
         name="Bash"
+        proficiency="Intermediate"
+      />
+      <Skill
+        icon={<TbSql />}
+        name="SQL"
+        proficiency="Intermediate"
+      />
+      <Skill
+        icon={<SiPostgresql />}
+        name="PostgreSQL"
         proficiency="Intermediate"
       />
       <Skill
