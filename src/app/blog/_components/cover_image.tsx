@@ -15,7 +15,7 @@ export default function CoverImage({ title, src, slug }: Props) {
       alt={`Cover Image for ${title}`}
       width={500}
       height={256}
-      className={cn("shadow-sm h-64 w-auto mx-auto", {
+      className={cn("shadow-sm h-64 w-auto mx-auto max-w-full", {
         "hover:shadow-lg transition-shadow duration-200": slug,
       })}
     />
