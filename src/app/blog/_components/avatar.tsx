@@ -1,4 +1,9 @@
 import Image from "next/image";
+import {
+  Avatar as AvatarPrimitive,
+  AvatarImage,
+  AvatarFallback,
+} from "@/components/ui/avatar";
 
 type Props = {
   name: string;
@@ -6,14 +11,15 @@ type Props = {
 }
 
 export default function Avatar({ name, picture }: Props) {
-  return <div className="flex items-center">
-    <Image
-      src={picture}
-      className="w-12 h-12 rounded-full mr-4"
-      alt={name}
-      width={48}
-      height={48}
-    />
-    <div className="text-xl font-bold">{name}</div>
-  </div>;
+  const initials = name.split(" ").map((word) => word[0]).join("");
+
+  return (
+    <div className="flex items-center gap-2">
+      <AvatarPrimitive>
+        <AvatarImage src={picture} alt={name} />
+        <AvatarFallback>{initials}</AvatarFallback>
+      </AvatarPrimitive>
+      <div className="text-xl font-bold">{name}</div>
+    </div>
+  );
 }
