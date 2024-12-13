@@ -21,6 +21,7 @@ export default function Blog() {
           author={heroPost.author}
           slug={heroPost.slug}
           excerpt={heroPost.excerpt}
+          coverImage={heroPost.coverImage}
         />
         {morePosts.length > 0 && <MorePosts posts={morePosts} />}
       </Container>
