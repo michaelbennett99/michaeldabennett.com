@@ -3,7 +3,7 @@ import CardBody from "./card_body";
 
 type Props = {
   title: string;
-  year: string;
+  year: number;
   description: string;
 }
 
