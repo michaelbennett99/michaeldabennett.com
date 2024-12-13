@@ -8,9 +8,10 @@ import {
 type Props = {
   name: string;
   picture: string;
+  className?: string;
 }
 
-export default function Avatar({ name, picture }: Props) {
+export default function Avatar({ name, picture, className }: Props) {
   const initials = name.split(" ").map((word) => word[0]).join("");
 
   return (
@@ -19,7 +20,7 @@ export default function Avatar({ name, picture }: Props) {
         <AvatarImage src={picture} alt={name} />
         <AvatarFallback>{initials}</AvatarFallback>
       </AvatarPrimitive>
-      <div className="text-xl font-bold">{name}</div>
+      <div className={className}>{name}</div>
     </div>
   );
 }
