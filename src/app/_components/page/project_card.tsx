@@ -20,7 +20,9 @@ export default function ProjectCard({
         <h3 className="text-2xl font-bold">
           {
             url
-            && <Link href={url} className="hover:underline">{name}</Link>
+            && <Link href={url} className="hover:underline" target="_blank">
+              {name}
+            </Link>
             || <span>{name}</span>
           }
         </h3>
