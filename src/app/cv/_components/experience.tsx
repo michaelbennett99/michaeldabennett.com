@@ -6,18 +6,14 @@ export default function Experience() {
   const professionalExperience = experiences.filter(
     (exp) => exp.experienceType === "professional"
   );
-  const leadershipExperience = experiences.filter(
-    (exp) => exp.experienceType === "leadership"
-  );
 
   return (
-    <>
+    <ul className="flex flex-col gap-2">
       {professionalExperience.map((experience) => (
-        <ExperienceCard
-          key={experience.title.toLowerCase().replace(/\s+/g, '_')}
-          {...experience}
-        />
+        <li key={experience.title.toLowerCase().replace(/\s+/g, '_')}>
+          <ExperienceCard {...experience} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }

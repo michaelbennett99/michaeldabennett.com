@@ -8,13 +8,12 @@ export default function Leadership() {
   );
 
   return (
-    <>
+    <ul className="flex flex-col gap-2">
       {leadershipExperience.map((experience) => (
-        <ExperienceCard
-          key={experience.title.toLowerCase().replace(/\s+/g, '_')}
-          {...experience}
-        />
+        <li key={experience.title.toLowerCase().replace(/\s+/g, '_')}>
+          <ExperienceCard {...experience} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }
