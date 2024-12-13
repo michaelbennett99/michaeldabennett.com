@@ -16,7 +16,7 @@ export default function ProjectCard({
   description: string;
 }) {
   return (
-    <div className="space-y-2">
+    <div>
       <CardHeader>
         <div className="flex flex-row justify-left items-center gap-2">
           <h3 className="font-bold">
