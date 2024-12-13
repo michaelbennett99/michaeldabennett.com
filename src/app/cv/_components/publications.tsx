@@ -5,14 +5,15 @@ export default function Publications() {
   const publications = getAllPublications();
 
   return (
-    <>
+    <ul className="flex flex-col gap-2">
       {publications.map((publication) => (
-        <PublicationCard
-          key={publication.title.toLowerCase().replace(/\s+/g, '_')}
-          {...publication}
-          className={publication.hidden ? "hidden" : ""}
-        />
+        <li key={publication.title.toLowerCase().replace(/\s+/g, '_')}>
+          <PublicationCard
+            {...publication}
+            className={publication.hidden ? "hidden" : ""}
+          />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }

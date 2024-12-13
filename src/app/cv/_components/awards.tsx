@@ -5,13 +5,12 @@ export default function Awards() {
   const awards = getAllAwards();
 
   return (
-    <>
+    <ul className="flex flex-col gap-2">
       {awards.map((award) => (
-        <AwardsCard
-          key={award.title.toLowerCase().replace(/\s+/g, '_')}
-          {...award}
-        />
+        <li key={award.title.toLowerCase().replace(/\s+/g, '_')}>
+          <AwardsCard {...award} />
+        </li>
       ))}
-    </>
+    </ul>
   );
 }

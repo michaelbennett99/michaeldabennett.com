@@ -2,9 +2,7 @@ import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
 
 import Section from "./_components/section";
-import PublicationCard from "./_components/publication_card";
 import Skills from "./_components/skills";
-import AwardsCard from "./_components/awards_card";
 import DownloadCV from "@/components/download_cv";
 import Projects from "./_components/projects";
 import Education from "./_components/education";
