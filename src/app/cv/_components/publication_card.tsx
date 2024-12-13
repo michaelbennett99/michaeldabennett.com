@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 
 type Props = {
   title: string;
-  year: string;
+  year: number;
   authorString: string;
   journalString: string;
   className?: string;
