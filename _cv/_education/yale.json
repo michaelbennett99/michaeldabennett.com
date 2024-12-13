@@ -1,0 +1,24 @@
+{
+    "degree": "MA Economics",
+    "institution": "Yale University",
+    "location": "New Haven, CT",
+    "start_year": 2022,
+    "end_year": 2024,
+    "grade": "Honors",
+    "modules": [
+        "Microeconomics",
+        "Macroeconomics",
+        "Econometrics",
+        "Algorithms",
+        "Deep Learning"
+    ],
+    "project": {
+        "name": "Example Project",
+        "title": "Object detection of cars from satellite images using Deep Learning.",
+        "bullets": [
+            "Trained, fine-tuned and evaluated YOLOv8n/s/m object detection models on aerial images.",
+            "Used remote GPU rented via vast.ai, initialised using custom Docker image, increasing training speed over 100x at cost under $10.",
+            "Wrote custom dataloaders in python to download large image datasets on remote servers at maximal speed, reducing GPU downtime cost."
+        ]
+    }
+}

@@ -1,15 +1,17 @@
 import Bullets from "./bullets";
+import type { EducationProject } from "@/interfaces/education_project";
 
 type Props = {
-  title: React.ReactNode;
-  bullets: React.ReactNode[];
+  project: EducationProject;
 };
 
-export default function EducationProject({ title, bullets }: Props) {
+export default function EducationProject({ project }: Props) {
   return (
     <div>
-      <h4>{title}</h4>
-      <Bullets bullets={bullets} />
+      <h4>
+        <span className="underline">{project.name}:</span> {project.title}
+      </h4>
+      <Bullets bullets={project.bullets} />
     </div>
   );
 }
