@@ -24,11 +24,11 @@ export default function HeroPost(
         </div>
       )}
       <div
-        className="flex flex-col md:flex-row md:gap-x-16 lg:gap-x-8 mb-16"
+        className="flex flex-col sm:flex-row gap-x-8 gap-y-4 mb-16 justify-between"
       >
-        <div className="basis-1/4 flex flex-col justify-between">
+        <div className="flex-none flex flex-col justify-between">
           <div>
-            <h3 className="text-4xl lg:text-6xl leading-tight">
+            <h3 className="text-4xl leading-tight">
               <Link href={`/blog/${slug}`} className="hover:underline">
                 {title}
               </Link>
@@ -37,12 +37,15 @@ export default function HeroPost(
               <DateFormatter dateString={date} />
             </div>
           </div>
-          <div>
+          <div className="hidden sm:block">
             <Avatar name={author.name} picture={author.picture} />
           </div>
         </div>
-        <div className="basis-3/4 self-center">
+        <div className="flex-auto self-center max-w-2xl">
           <p className="text-lg leading-relaxed">{excerpt}</p>
+        </div>
+        <div className="sm:hidden">
+          <Avatar name={author.name} picture={author.picture} />
         </div>
       </div>
     </section>
