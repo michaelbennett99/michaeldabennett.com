@@ -32,7 +32,7 @@ export default function ProjectCard({
           />
         }
       </div>
-      <p className="text-xl text-justify">{description}</p>
+      <p>{description}</p>
     </div>
   );
 }
