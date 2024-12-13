@@ -8,7 +8,7 @@ export default function Header() {
     <header className="pt-16 pb-8 flex flex-col items-center gap-4">
       <h1 className="text-8xl font-bold text-center">Michael Bennett</h1>
       <div className="text-4xl text-center" role="doc-subtitle">
-        Software Engineer
+        Software Engineer/Data Scientist
       </div>
       <nav className="flex justify-center gap-4 text-3xl">
         <SocialLink
