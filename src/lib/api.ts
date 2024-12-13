@@ -2,6 +2,8 @@ import type { Post } from "@/interfaces/post";
 import type { Project } from "@/interfaces/project";
 import type { Education } from "@/interfaces/education";
 import type { Experience } from "@/interfaces/experience";
+import type { Award } from "@/interfaces/award";
+import type { Publication } from "@/interfaces/publication";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -99,4 +101,48 @@ export function getAllExperience(): Experience[] {
     return dateB.getTime() - dateA.getTime();
   });
   return experience;
+}
+
+const awardsDirectory = join(process.cwd(), "_cv/_awards");
+
+export function getAwardSlugs() {
+  return fs.readdirSync(awardsDirectory);
+}
+
+export function getAwardBySlug(slug: string) {
+  const realSlug = slug.replace(/\.json$/, "");
+  const fullPath = join(awardsDirectory, `${realSlug}.json`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const obj = JSON.parse(fileContents);
+  return obj as Award;
+}
+
+export function getAllAwards(): Award[] {
+  const slugs = getAwardSlugs();
+  const awards = slugs.map((slug) => getAwardBySlug(slug));
+  // Sort by year in descending order
+  awards.sort((a, b) => b.year - a.year);
+  return awards;
+}
+
+const publicationsDirectory = join(process.cwd(), "_cv/_publications");
+
+export function getPublicationSlugs() {
+  return fs.readdirSync(publicationsDirectory);
+}
+
+export function getPublicationBySlug(slug: string) {
+  const realSlug = slug.replace(/\.json$/, "");
+  const fullPath = join(publicationsDirectory, `${realSlug}.json`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const obj = JSON.parse(fileContents);
+  return obj as Publication;
+}
+
+export function getAllPublications(): Publication[] {
+  const slugs = getPublicationSlugs();
+  const publications = slugs.map((slug) => getPublicationBySlug(slug));
+  // Sort by year in descending order
+  publications.sort((a, b) => b.year - a.year);
+  return publications;
 }
