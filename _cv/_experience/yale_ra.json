@@ -1,0 +1,15 @@
+{
+  "title": "Graduate Research Assistant",
+  "employer": "Yale University",
+  "location": "New Haven, CT",
+  "start_date": "Oct 2023",
+  "end_date": "June 2024",
+  "description": "Research software development for project on economic growth and clean energy.",
+  "bullets": [
+    "Created UML package and object diagrams to visualise and then improve software architecture for better performance, usability, and maintainability.",
+    "Implemented improved architecture in Julia, upgrading user interface, data processing and first stage solution modules from MATLAB scripts to Julia command line application, leading to 50% runtime improvement and more transparent interface.",
+    "Used Documenter.jl and GitHub Actions to produce automatically updating website of code documentation, eliminating documentation duplication and improving ease of interaction.",
+    "Used Python to collect, visualise and analyse geospatial economic and climate data to quantify the empirical relationship between climate and productivity within geographical regions."
+  ],
+  "experienceType": "professional"
+}

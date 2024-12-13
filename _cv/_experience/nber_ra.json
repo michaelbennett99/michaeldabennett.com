@@ -1,0 +1,15 @@
+{
+  "title": "Genoeconomics Research Assistant",
+  "employer": "National Bureau of Economic Research",
+  "location": "Cambridge, MA",
+  "start_date": "Jul 2020",
+  "end_date": "Jun 2022",
+  "description": "Research software development in a cross-disciplinary statistical genetics and economics lab.",
+  "bullets": [
+    "Developed two command line applications for genetic data analysis on large human genetic datasets using Python, enabling complex analyses to run in under one hour. Used just-in-time compilation via numba to achieve better performance on non-vectorisable operations.",
+    "Designed and implemented internal pipelines using Python, bash, and third-party CLI tools such as PLINK for processing of genetic datasets with sizes between 100GB and 1TB on remote high-performance machines.",
+    "Devised methodology to standardize measures of educational attainment across several national-level datasets. Authored the corresponding section in the resulting paper, published in Nature Genetics (2022) with 204 citations as of August 2024.",
+    "Developed visualisation software using Python and matplotlib to produce custom publication-ready graphs (including Manhattan plots) and tables, saving development time for other team-members and allowing rapid automated edits prior to submission and resubmission."
+  ],
+  "experienceType": "professional"
+}

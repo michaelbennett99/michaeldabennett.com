@@ -9,6 +9,8 @@ import AwardsCard from "./_components/awards_card";
 import DownloadCV from "@/components/download_cv";
 import Projects from "./_components/projects";
 import Education from "./_components/education";
+import Experience from "./_components/experience";
+import Leadership from "./_components/leadership";
 
 export default function CV() {
   return (
@@ -23,60 +25,10 @@ export default function CV() {
             <Education />
           </Section>
           <Section title="Professional Experience">
-            <ExperienceCard
-              title="Graduate Research Assistant"
-              employer="Yale University"
-              location="New Haven, CT"
-              start_date="Oct 2023"
-              end_date="June 2024"
-              description="Research software development for project on economic growth and clean energy."
-              bullets={[
-                "Created UML package and object diagrams to visualise and then improve software architecture for better performance, usability, and maintainability.",
-                "Implemented improved architecture in Julia, upgrading user interface, data processing and first stage solution modules from MATLAB scripts to Julia command line application, leading to 50% runtime improvement and more transparent interface.",
-                "Used Documenter.jl and GitHub Actions to produce automatically updating website of code documentation, eliminating documentation duplication and improving ease of interaction.",
-                "Used Python to collect, visualise and analyse geospatial economic and climate data to quantify the empirical relationship between climate and productivity within geographical regions.",
-              ]}
-            />
-            <ExperienceCard
-              title="Genoeconomics Research Assistant"
-              employer="National Bureau of Economic Research"
-              location="Cambridge, MA"
-              start_date="Jul 2020"
-              end_date="Jun 2022"
-              description="Research software development in a cross-disciplinary statistical genetics and economics lab."
-              bullets={[
-                "Developed two command line applications for genetic data analysis on large human genetic datasets using Python, enabling complex analyses to run in under one hour. Used just-in-time compilation via numba to achieve better performance on non-vectorisable operations.",
-                "Designed and implemented internal pipelines using Python, bash, and third-party CLI tools such as PLINK for processing of genetic datasets with sizes between 100GB and 1TB on remote high-performance machines.",
-                "Devised methodology to standardize measures of educational attainment across several national-level datasets. Authored the corresponding section in the resulting paper, published in Nature Genetics (2022) with 204 citations as of August 2024.",
-                "Developed visualisation software using Python and matplotlib to produce custom publication-ready graphs (including Manhattan plots) and tables, saving development time for other team-members and allowing rapid automated edits prior to submission and resubmission.",
-              ]}
-            />
-            <ExperienceCard
-              title="Operations Research Intern"
-              employer="Department for Work and Pensions, HM Government"
-              location="London, UK"
-              start_date="Jul 2019"
-              end_date="Sep 2019"
-              description="Researched the extent to which the demographic and socioeconomic backgrounds of working age benefit claimants could predict whether they would contact their administrative authority."
-              bullets={[
-                "Worked with colleagues to gain access to source data, built a working database for analysis from source data using SQL, and automated and documented this process for use by future researchers.",
-                "Performed exploratory analysis, applied machine learning techniques to develop forecasting methodology and produced visualisations using R."
-              ]}
-            />
+            <Experience />
           </Section>
           <Section title="Leadership Experience">
-            <ExperienceCard
-              title="Project Manager & Treasurer"
-              employer="Effective Altruism Cambridge"
-              location="Cambridge, UK"
-              start_date="Mar 2019"
-              end_date="Feb 2020"
-              description="Student-run organisation at the University of Cambridge."
-              bullets={[
-                "Chaired leadership committee meetings and managed a team of 10 other volunteers to plan and run 40 events, achieving 20% increase in attendance compared to the previous year.",
-                "Authored grant applications leading to £5000 in funding.",
-              ]}
-            />
+            <Leadership />
           </Section>
           <Section title="Publications">
             <PublicationCard
