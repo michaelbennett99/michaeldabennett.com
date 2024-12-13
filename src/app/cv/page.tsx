@@ -2,14 +2,13 @@ import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
 
 import Section from "./_components/section";
-import EducationCard from "./_components/education_card";
 import ExperienceCard from "./_components/experience_card";
 import PublicationCard from "./_components/publication_card";
-import ProjectCard from "./_components/project_card";
 import Skills from "./_components/skills";
 import AwardsCard from "./_components/awards_card";
 import DownloadCV from "@/components/download_cv";
 import Projects from "./_components/projects";
+import Education from "./_components/education";
 
 export default function CV() {
   return (
@@ -21,59 +20,7 @@ export default function CV() {
         </div>
         <div className="mt-8 mb-16">
           <Section title="Education">
-            <EducationCard
-              degree="MA Economics"
-              institution="Yale University"
-              location="New Haven, CT"
-              start_year={2022}
-              end_year={2024}
-              grade="Honors"
-              modules={[
-                "Microeconomics",
-                "Macroeconomics",
-                "Econometrics",
-                "Algorithms",
-                "Deep Learning",
-              ]}
-              project={{
-                title: (
-                  <p>
-                    <span className="underline">Example Project:</span> Object
-                    detection of cars from satellite images using Deep Learning.
-                  </p>
-                ),
-                bullets: [
-                  "Trained, fine-tuned and evaluated YOLOv8n/s/m object detection models on aerial images.",
-                  "Used remote GPU rented via vast.ai, initialised using custom Docker image, increasing training speed over 100x at cost under $10.",
-                  "Wrote custom dataloaders in python to download large image datasets on remote servers at maximal speed, reducing GPU downtime cost.",
-                ],
-              }}
-            />
-            <EducationCard
-              degree="BA Economics"
-              institution="University of Cambridge"
-              location="Cambridge, UK"
-              start_year={2017}
-              end_year={2020}
-              grade="First Class"
-              modules={[
-                "Microeconomics",
-                "Macroeconomics",
-                "Advanced Econometrics",
-                "Real Analysis",
-              ]}
-              project={{
-                title: (
-                  <p>
-                    <span className="underline">Dissertation:</span> The Effect of the Minimum Wage on Employment
-                  </p>
-                ),
-                bullets: [
-                  "Used a difference-in-differences approach to estimate the effect of the minimum wage on employment",
-                  "Found that the minimum wage has a significant negative effect on employment",
-                ],
-              }}
-            />
+            <Education />
           </Section>
           <Section title="Professional Experience">
             <ExperienceCard

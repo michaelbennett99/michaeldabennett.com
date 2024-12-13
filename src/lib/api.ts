@@ -1,5 +1,6 @@
-import { Post } from "@/interfaces/post";
-import { Project } from "@/interfaces/project";
+import type { Post } from "@/interfaces/post";
+import type { Project } from "@/interfaces/project";
+import type { Education } from "@/interfaces/education";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -48,4 +49,24 @@ export function getAllProjects(): Project[] {
   const projects = slugs.map((slug) => getProjectBySlug(slug));
   projects.sort((a, b) => (a.order || Infinity) - (b.order || Infinity));
   return projects;
+}
+
+const educationDirectory = join(process.cwd(), "_cv/_education");
+
+export function getEducationSlugs() {
+  return fs.readdirSync(educationDirectory);
+}
+
+export function getEducationBySlug(slug: string) {
+  const realSlug = slug.replace(/\.json$/, "");
+  const fullPath = join(educationDirectory, `${realSlug}.json`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const obj = JSON.parse(fileContents);
+  return obj as Education;
+}
+
+export function getAllEducation(): Education[] {
+  const slugs = getEducationSlugs();
+  const education = slugs.map((slug) => getEducationBySlug(slug));
+  return education;
 }

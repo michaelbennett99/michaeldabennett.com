@@ -1,0 +1,22 @@
+{
+  "degree": "BA Economics",
+  "institution": "University of Cambridge",
+  "location": "Cambridge, UK",
+  "start_year": 2017,
+  "end_year": 2020,
+  "grade": "First Class",
+  "modules": [
+    "Microeconomics",
+    "Macroeconomics",
+    "Advanced Econometrics",
+    "Real Analysis"
+  ],
+  "project": {
+    "name": "Dissertation",
+    "title": "The Effect of the Minimum Wage on Employment",
+    "bullets": [
+      "Used a difference-in-differences approach to estimate the effect of the minimum wage on employment",
+      "Found that the minimum wage has a significant negative effect on employment"
+    ]
+  }
+}

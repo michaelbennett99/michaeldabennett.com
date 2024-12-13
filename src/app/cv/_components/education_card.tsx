@@ -1,59 +1,41 @@
 import CardHeader from "./card_header";
 import CardBody from "./card_body";
 import EducationProject from "./education_project";
+import type { Education } from "@/interfaces/education";
 
 type Props = {
-  degree: string;
-  institution: string;
-  location: string;
-  start_year: number;
-  end_year: number;
-  grade?: string;
-  modules?: string[];
-  project?: {
-    title: React.ReactNode;
-    bullets: React.ReactNode[];
-  };
+  education: Education;
 };
 
-export default function EducationCard({
-  degree,
-  institution,
-  location,
-  start_year,
-  end_year,
-  grade,
-  modules,
-  project,
-}: Props) {
+export default function EducationCard({ education }: Props) {
   return (
     <div className="flex flex-col">
       <CardHeader className="flex flex-col md:flex-row md:justify-between md:gap-2">
         <div className="flex flex-col">
           <h3>
-            <strong>{degree}</strong>
+            <strong>{education.degree}</strong>
           </h3>
           <p className="text-base">
-            <strong>{institution}, {location}</strong>
+            <strong>{education.institution}, {education.location}</strong>
           </p>
         </div>
         <p className="text-base">
-          {start_year} - {end_year}
+          {education.start_year} - {education.end_year}
         </p>
       </CardHeader>
       <CardBody>
-        {grade && (
+        {education.grade && (
           <p>
-            <span className="underline">Grade:</span> {grade}
+            <span className="underline">Grade:</span> {education.grade}
           </p>
         )}
-        {modules && (
+        {education.modules && (
           <p>
-            <span className="underline">Selected Modules:</span> {modules.join(", ")}
+            <span className="underline">Selected Modules:</span> {education.modules.join(", ")}
           </p>
         )}
-        {project && (
-          <EducationProject title={project.title} bullets={project.bullets} />
+        {education.project && (
+          <EducationProject project={education.project} />
         )}
       </CardBody>
     </div>
