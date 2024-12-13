@@ -8,7 +8,7 @@ type Props = {
 export default function MorePosts({ posts }: Props) {
   return <section>
       <h2
-        className="mb-8 text-6xl md:text-7xl font-bold tracking-tighter leading-tight"
+        className="mb-8 text-4xl md:text-5xl font-bold tracking-tighter leading-tight"
       >
         More Posts
       </h2>
