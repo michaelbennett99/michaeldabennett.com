@@ -2,6 +2,7 @@
 title: "Final Post"
 excerpt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Praesent elementum facilisis leo vel fringilla est ullamcorper eget. At imperdiet dui accumsan sit amet nulla facilities morbi tempus."
 date: "2024-12-10T05:35:07.322Z"
+coverImage: "/images/test.jpg"
 author:
   name: Michael Bennett
 ---
