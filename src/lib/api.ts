@@ -1,6 +1,7 @@
 import type { Post } from "@/interfaces/post";
 import type { Project } from "@/interfaces/project";
 import type { Education } from "@/interfaces/education";
+import type { Experience } from "@/interfaces/experience";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
@@ -69,4 +70,24 @@ export function getAllEducation(): Education[] {
   const slugs = getEducationSlugs();
   const education = slugs.map((slug) => getEducationBySlug(slug));
   return education;
+}
+
+const experienceDirectory = join(process.cwd(), "_cv/_experience");
+
+export function getExperienceSlugs() {
+  return fs.readdirSync(experienceDirectory);
+}
+
+export function getExperienceBySlug(slug: string) {
+  const realSlug = slug.replace(/\.json$/, "");
+  const fullPath = join(experienceDirectory, `${realSlug}.json`);
+  const fileContents = fs.readFileSync(fullPath, "utf8");
+  const obj = JSON.parse(fileContents);
+  return obj as Experience;
+}
+
+export function getAllExperience(): Experience[] {
+  const slugs = getExperienceSlugs();
+  const experience = slugs.map((slug) => getExperienceBySlug(slug));
+  return experience;
 }
