@@ -46,5 +46,6 @@ export function getProjectBySlug(slug: string) {
 export function getAllProjects(): Project[] {
   const slugs = getProjectSlugs();
   const projects = slugs.map((slug) => getProjectBySlug(slug));
+  projects.sort((a, b) => (a.order || Infinity) - (b.order || Infinity));
   return projects;
 }
