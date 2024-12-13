@@ -9,6 +9,7 @@ import ProjectCard from "./_components/project_card";
 import Skills from "./_components/skills";
 import AwardsCard from "./_components/awards_card";
 import DownloadCV from "@/components/download_cv";
+import Projects from "./_components/projects";
 
 export default function CV() {
   return (
@@ -152,23 +153,7 @@ export default function CV() {
             />
           </Section>
           <Section title="Independent Projects">
-            <ProjectCard
-              name="StageHunter"
-              url="https://stagehunter.cc"
-              githubUrl="https://github.com/michaelbennett99/stagehunter"
-              description="A daily web game that tests users’ pro cycling knowledge. Built using Typescript and Next.js (frontend), Go (backend), Postgres + PostGIS (database), AWS (hosting) and Cloudflare (DNS)."
-            />
-            <ProjectCard
-              name="Rusty Chess Clock"
-              url="https://crates.io/crates/rusty_chess_clock"
-              githubUrl="https://github.com/michaelbennett99/rusty_chess_clock"
-              description="Customisable chess clock GUI (using iced-rs) and CLI (using termion) application implemented in Rust, backed by a zero-dependency library providing a chess clock API. Built as a quick rust exercise to practice the language and a slightly lengthier exercise to learn one method for building a GUI application."
-            />
-            <ProjectCard
-              name="Gendata.py"
-              githubUrl="https://github.com/michaelbennett99/gendata.py"
-              description="A Python package that provides a very simple interface for reading and performing simple operations on human genetic data in bed/bim/fam format, documented using Sphinx."
-            />
+            <Projects />
           </Section>
           <Section title="Skills">
             <Skills />
