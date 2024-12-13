@@ -3,4 +3,5 @@ export interface Project {
   url: string;
   githubUrl: string;
   content: string;
+  order?: number;
 }
