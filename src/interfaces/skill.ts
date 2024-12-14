@@ -4,7 +4,7 @@ import { IconName } from "./icon_name";
 export interface Skill {
   name: string;
   icon?: IconName;
-  proficiency: Proficiency;
+  proficiency?: Proficiency;
 }
 
 export interface SkillCategory {

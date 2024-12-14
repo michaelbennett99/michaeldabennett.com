@@ -1,3 +1,5 @@
+import { FaChevronRight } from "react-icons/fa";
+
 import { skills } from "@/lib/content";
 
 import TechIcon from "@/components/tech_icon";
@@ -16,7 +18,11 @@ export default function Skills() {
             {category.skills.map((skill) => (
               <Skill
                 key={skill.name}
-                icon={skill.icon ? <TechIcon icon={skill.icon} /> : undefined}
+                icon={
+                  skill.icon
+                    ? <TechIcon icon={skill.icon} />
+                    : <FaChevronRight />
+                }
                 name={skill.name}
                 proficiency={skill.proficiency}
               />
