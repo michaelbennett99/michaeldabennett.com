@@ -1,0 +1,18 @@
+{
+  "title": "Soft Skills",
+  "skills": [
+    {
+      "name": "Leadership",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "Communication",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "Problem Solving",
+      "proficiency": "Advanced"
+    }
+  ],
+  "order": 1
+}
