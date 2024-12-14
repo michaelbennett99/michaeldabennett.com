@@ -11,4 +11,6 @@ export const projects = getContent<Project>(contentConfigs.projects);
 export const education = getContent<Education>(contentConfigs.education);
 export const experience = getContent<Experience>(contentConfigs.experience);
 export const awards = getContent<Award>(contentConfigs.awards);
-export const publications = getContent<Publication>(contentConfigs.publications);
+export const publications = getContent<Publication>(
+    contentConfigs.publications
+);
