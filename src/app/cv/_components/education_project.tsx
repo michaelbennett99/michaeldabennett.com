@@ -11,7 +11,7 @@ export default function EducationProject({ project }: Props) {
       <h4>
         <span className="underline">{project.name}:</span> {project.title}
       </h4>
-      <Bullets bullets={project.bullets} />
+      {project.bullets && <Bullets bullets={project.bullets} />}
     </div>
   );
 }

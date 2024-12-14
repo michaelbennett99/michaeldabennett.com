@@ -13,10 +13,6 @@
   ],
   "project": {
     "name": "Dissertation",
-    "title": "The Effect of the Minimum Wage on Employment",
-    "bullets": [
-      "Used a difference-in-differences approach to estimate the effect of the minimum wage on employment",
-      "Found that the minimum wage has a significant negative effect on employment"
-    ]
+    "title": "Consumer Preference and Animal Welfare: Variable Population Models of the Farming Sector"
   }
 }
