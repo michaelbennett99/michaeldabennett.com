@@ -1,9 +1,3 @@
-import type { Post } from "@/interfaces/post";
-import type { Project } from "@/interfaces/project";
-import type { Education } from "@/interfaces/education";
-import type { Experience } from "@/interfaces/experience";
-import type { Award } from "@/interfaces/award";
-import type { Publication } from "@/interfaces/publication";
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
