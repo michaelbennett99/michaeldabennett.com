@@ -1,4 +1,4 @@
-import { FaGithub, FaLinkedin, FaStrava } from "react-icons/fa";
+import TechIcon from "@/components/tech_icon";
 
 import SocialLink from "@/components/social_link";
 import DownloadCV from "@/components/download_cv";
@@ -13,15 +13,15 @@ export default function Header() {
       <nav className="flex justify-center gap-4 text-3xl">
         <SocialLink
           href="https://github.com/michaelbennett99"
-          icon={<FaGithub />}
+          icon={<TechIcon icon="github" applyHouseColour />}
         />
         <SocialLink
           href="https://www.linkedin.com/in/michaeldabennett"
-          icon={<FaLinkedin />}
+          icon={<TechIcon icon="linkedin" applyHouseColour />}
         />
         <SocialLink
           href="https://www.strava.com/athletes/25477476"
-          icon={<FaStrava />}
+          icon={<TechIcon icon="strava" applyHouseColour />}
         />
       </nav>
       <DownloadCV />
