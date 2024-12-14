@@ -2,16 +2,13 @@
   "title": "Soft Skills",
   "skills": [
     {
-      "name": "Leadership",
-      "proficiency": "Advanced"
+      "name": "Leadership"
     },
     {
-      "name": "Communication",
-      "proficiency": "Advanced"
+      "name": "Communication"
     },
     {
-      "name": "Problem Solving",
-      "proficiency": "Advanced"
+      "name": "Problem Solving"
     }
   ],
   "order": 1
