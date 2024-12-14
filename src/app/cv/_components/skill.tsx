@@ -24,7 +24,7 @@ export default function Skill({
   }[proficiency];
 
   return (
-    <TooltipProvider>
+    <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
           <div
