@@ -3,7 +3,7 @@ name: "StageHunter"
 url: "https://stagehunter.cc"
 githubUrl: "https://github.com/michaelbennett99/stagehunter"
 order: 1
-techStack: ["typescript", "react", "go", "postgresql", "aws", "cloudflare"]
+techStack: ["typescript", "react", "nextjs", "go", "postgresql", "aws", "cloudflare"]
 ---
 
 A daily web game that tests users' pro cycling knowledge. Built using
