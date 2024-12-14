@@ -1,10 +1,6 @@
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
-
 import { Project } from "@/interfaces/project";
 
-import SocialLink from "@/components/social_link";
-import TechIcon from "@/components/tech_icon";
+import ProjectCardHeader from "@/components/projects/project_card_header";
 
 type Props = {
   project: Project
@@ -12,41 +8,10 @@ type Props = {
 
 export default function ProjectCard({ project }: Props) {
   return (
-    <div className="space-y-2">
-      <div
-        className="flex flex-col md:flex-row md:justify-between md:items-center gap-2"
-      >
-        <div>
-          <h3 className="text-2xl font-bold space-x-2">
-            {
-              project.url
-              && <Link href={project.url} className="hover:underline" target="_blank">
-                {project.name}
-              </Link>
-              || <span>{project.name}</span>
-            }
-            <div className="inline-block">
-              {
-                project.githubUrl
-                && <SocialLink
-                  href={project.githubUrl}
-                  icon={<FaGithub className="text-lg" />}
-                />
-              }
-            </div>
-          </h3>
-        </div>
-        {
-          project.techStack
-          && <ul className="flex flex-row gap-2">
-            {project.techStack.map((tech) => (
-              <li key={tech}>
-                <TechIcon icon={tech} applyHouseColour={true} tooltip={true} />
-              </li>
-            ))}
-          </ul>
-        }
-      </div>
+    <div
+      className="space-y-2 [&_.project-title]:text-2xl [&_.project-title]:font-bold [&_.github-icon]:text-lg"
+    >
+      <ProjectCardHeader project={project} />
       <p>{project.content}</p>
     </div>
   );

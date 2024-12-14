@@ -1,35 +1,21 @@
-import Link from "next/link";
-import { FaGithub } from "react-icons/fa";
+import ProjectCardHeader from "@/components/projects/project_card_header";
 
 import CardHeader from "./card_header";
 import CardBody from "./card_body";
+import { Project } from "@/interfaces/project";
 
-export default function ProjectCard({
-  name,
-  url,
-  githubUrl,
-  description,
-}: {
-  name: string;
-  url?: string;
-  githubUrl?: string;
-  description: string;
-}) {
+type Props = {
+  project: Project
+}
+
+export default function ProjectCard({ project }: Props) {
   return (
     <div>
-      <CardHeader>
-        <div className="flex flex-row justify-left items-center gap-2">
-          <h3 className="font-bold">
-            { url
-              && <Link href={url} className="hover:underline">{name}</Link>
-              || <span>{name}</span>
-            }
-          </h3>
-          { githubUrl && <Link href={githubUrl}><FaGithub/></Link> }
-        </div>
+      <CardHeader className="[&_.project-title]:font-bold [&_.github-icon]:text-lg">
+        <ProjectCardHeader project={project} />
       </CardHeader>
       <CardBody>
-        <p>{description}</p>
+        <p>{project.content}</p>
       </CardBody>
     </div>
   );
