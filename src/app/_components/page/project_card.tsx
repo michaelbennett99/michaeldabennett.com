@@ -13,23 +13,29 @@ type Props = {
 export default function ProjectCard({ project }: Props) {
   return (
     <div className="space-y-2">
-      <div className="flex flex-row justify-left items-center gap-2">
-        <h3 className="text-2xl font-bold">
-          {
-            project.url
-            && <Link href={project.url} className="hover:underline" target="_blank">
-              {project.name}
-            </Link>
-            || <span>{project.name}</span>
-          }
-        </h3>
-        {
-          project.githubUrl
-          && <SocialLink
-            href={project.githubUrl}
-            icon={<FaGithub className="text-lg" />}
-          />
-        }
+      <div
+        className="flex flex-row justify-between items-center gap-2"
+      >
+        <div>
+          <h3 className="text-2xl font-bold space-x-2">
+            {
+              project.url
+              && <Link href={project.url} className="hover:underline" target="_blank">
+                {project.name}
+              </Link>
+              || <span>{project.name}</span>
+            }
+            <div className="inline-block">
+              {
+                project.githubUrl
+                && <SocialLink
+                  href={project.githubUrl}
+                  icon={<FaGithub className="text-lg" />}
+                />
+              }
+            </div>
+          </h3>
+        </div>
         {
           project.techStack
           && <ul className="flex flex-row gap-2">
