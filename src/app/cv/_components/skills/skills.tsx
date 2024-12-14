@@ -9,7 +9,7 @@ export default function Skills() {
   const skillCategories = skills.getAll();
 
   return (
-    <>
+    <div>
       {skillCategories.map((category) => (
         <SkillsSection key={category.title} title={category.title}>
           <CardBody className="grid grid-cols-3 md:grid-cols-5 gap-2 justify-items-center">
@@ -24,6 +24,6 @@ export default function Skills() {
           </CardBody>
         </SkillsSection>
       ))}
-    </>
+    </div>
   );
 }
