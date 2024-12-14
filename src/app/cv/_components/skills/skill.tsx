@@ -6,7 +6,35 @@ import {
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
 
-type Proficiency = "Beginner" | "Intermediate" | "Advanced";
+import { Proficiency } from "@/interfaces/proficiency";
+
+type Props = {
+  icon: React.ReactNode;
+  name: string;
+  proficiency?: Proficiency;
+};
+
+function SkillText({ icon, name, proficiency }: Props) {
+  const proficiency_color = proficiency
+    ? {
+        Beginner: "text-yellow-600",
+        Intermediate: "text-green-600",
+        Advanced: "text-purple-600",
+      }[proficiency]
+    : "text-foreground";
+
+  return (
+    <div
+      className={cn(
+        "flex flex-row justify-left items-center gap-2",
+        proficiency_color
+      )}
+    >
+      {icon}
+      <p>{name}</p>
+    </div>
+  );
+}
 
 export default function Skill({
   icon,
@@ -15,28 +43,17 @@ export default function Skill({
 }: {
   icon: React.ReactNode;
   name: string;
-  proficiency: Proficiency;
+  proficiency?: Proficiency;
 }) {
-  const proficiency_color = {
-    Beginner: "text-yellow-600",
-    Intermediate: "text-green-600",
-    Advanced: "text-purple-600",
-  }[proficiency];
+  if (!proficiency) {
+    return <SkillText icon={icon} name={name} />;
+  }
 
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger asChild>
-          <div
-            className={cn(
-              "flex flex-row justify-left items-center gap-2",
-              proficiency_color
-            )}
-            aria-label={`${name} proficiency: ${proficiency}`}
-          >
-            {icon}
-            <p>{name}</p>
-          </div>
+          <SkillText icon={icon} name={name} proficiency={proficiency} />
         </TooltipTrigger>
         <TooltipContent
           className="bg-muted text-muted-foreground"
