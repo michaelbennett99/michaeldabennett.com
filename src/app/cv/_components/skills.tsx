@@ -1,23 +1,4 @@
-import {
-  SiPython,
-  SiRust,
-  SiHtml5,
-  SiCss3,
-  SiTypescript,
-  SiReact,
-  SiDocker,
-  SiGit,
-  SiLinux,
-  SiGo,
-  SiJulia,
-  SiHaskell,
-  SiCplusplus,
-  SiGnubash,
-  SiPostgresql
-} from "react-icons/si";
-import { TbSql } from "react-icons/tb";
-import { FaAws } from "react-icons/fa";
-
+import TechIcon from "@/components/tech_icon";
 import CardBody from "./card_body";
 import Skill from "./skill";
 
@@ -25,87 +6,87 @@ export default function Skills() {
   return (
     <CardBody className="grid grid-cols-3 md:grid-cols-5 gap-2 justify-items-center">
       <Skill
-        icon={<SiTypescript />}
+        icon={<TechIcon icon="typescript" />}
         name="TypeScript"
         proficiency="Advanced"
       />
       <Skill
-        icon={<SiGo />}
+        icon={<TechIcon icon="go" />}
         name="Go"
         proficiency="Advanced"
       />
       <Skill
-        icon={<SiPython />}
+        icon={<TechIcon icon="python" />}
         name="Python"
         proficiency="Advanced"
       />
       <Skill
-        icon={<SiHtml5 />}
+        icon={<TechIcon icon="html" />}
         name="HTML"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiCss3 />}
+        icon={<TechIcon icon="css" />}
         name="CSS"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiReact />}
+        icon={<TechIcon icon="react" />}
         name="React"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiRust />}
+        icon={<TechIcon icon="rust" />}
         name="Rust"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiJulia />}
+        icon={<TechIcon icon="julia" />}
         name="Julia"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiHaskell />}
+        icon={<TechIcon icon="haskell" />}
         name="Haskell"
         proficiency="Beginner"
       />
       <Skill
-        icon={<SiCplusplus />}
+        icon={<TechIcon icon="c++" />}
         name="C++"
         proficiency="Beginner"
       />
       <Skill
-        icon={<SiGnubash />}
+        icon={<TechIcon icon="bash" />}
         name="Bash"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<TbSql />}
+        icon={<TechIcon icon="sql" />}
         name="SQL"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiPostgresql />}
+        icon={<TechIcon icon="postgresql" />}
         name="PostgreSQL"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiDocker />}
+        icon={<TechIcon icon="docker" />}
         name="Docker"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiGit />}
+        icon={<TechIcon icon="git" />}
         name="Git"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<SiLinux />}
+        icon={<TechIcon icon="linux" />}
         name="Linux"
         proficiency="Intermediate"
       />
       <Skill
-        icon={<FaAws />}
+        icon={<TechIcon icon="aws" />}
         name="AWS"
         proficiency="Intermediate"
       />
