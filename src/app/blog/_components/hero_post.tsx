@@ -17,7 +17,7 @@ export default function HeroPost(
   { title, date, excerpt, author, slug, coverImage }: Props
 ) {
   return (
-    <section>
+    <section id={slug}>
       {coverImage && (
         <div className="mb-8">
           <CoverImage title={title} src={coverImage} slug={slug} />
