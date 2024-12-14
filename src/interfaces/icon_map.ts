@@ -15,7 +15,10 @@ import {
   SiGnubash,
   SiPostgresql,
   SiPytorch,
-  SiCloudflare
+  SiCloudflare,
+  SiTailwindcss,
+  SiNextdotjs,
+  SiJavascript
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
@@ -96,6 +99,18 @@ const iconMap = {
   "cloudflare": {
     icon: SiCloudflare,
     houseColour: "#F38020"
+  },
+  "tailwindcss": {
+    icon: SiTailwindcss,
+    houseColour: "#38BDF8"
+  },
+  "nextjs": {
+    icon: SiNextdotjs,
+    houseColour: "#000000"
+  },
+  "javascript": {
+    icon: SiJavascript,
+    houseColour: "#F7DF1E"
   }
 }
 
