@@ -1,5 +1,5 @@
 import TechIcon from "@/components/tech_icon";
-import CardBody from "./card_body";
+import CardBody from "../card_body";
 import Skill from "./skill";
 
 export default function Skills() {
