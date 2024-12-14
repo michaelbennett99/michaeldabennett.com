@@ -7,6 +7,8 @@ import Footer from "./_components/layout/footer";
 import Head from "./_components/layout/head";
 import XThemeProvider from "../components/theme_provider";
 
+import { Toaster } from "@/components/ui/toaster";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -17,9 +19,12 @@ export default function RootLayout({
       <Head />
       <body>
         <XThemeProvider>
-          <Header />
-          {children}
-          <Footer />
+          <div className="flex flex-col min-h-screen">
+            <Header />
+            {children}
+            <Footer />
+          </div>
+          <Toaster />
         </XThemeProvider>
       </body>
     </html>
