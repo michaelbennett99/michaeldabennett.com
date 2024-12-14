@@ -14,7 +14,7 @@ export default function ProjectCard({ project }: Props) {
   return (
     <div className="space-y-2">
       <div
-        className="flex flex-row justify-between items-center gap-2"
+        className="flex flex-col md:flex-row md:justify-between md:items-center gap-2"
       >
         <div>
           <h3 className="text-2xl font-bold space-x-2">
