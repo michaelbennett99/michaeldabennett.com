@@ -18,7 +18,8 @@ import {
   SiCloudflare,
   SiTailwindcss,
   SiNextdotjs,
-  SiJavascript
+  SiJavascript,
+  SiShadcnui
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
@@ -32,7 +33,7 @@ const iconMap = {
   "rust": {
     tooltip: "Rust",
     icon: SiRust,
-    houseColour: "#DEA584"
+    houseColour: "#000000"
   },
   "html": {
     tooltip: "HTML",
@@ -67,7 +68,7 @@ const iconMap = {
   "linux": {
     tooltip: "Linux",
     icon: SiLinux,
-    houseColour: "#000000"
+    houseColour: "#FCC624"
   },
   "go": {
     tooltip: "Go",
@@ -82,17 +83,17 @@ const iconMap = {
   "bash": {
     tooltip: "Bash",
     icon: SiGnubash,
-    houseColour: "#4D4D4D"
+    houseColour: "#4EAA25"
   },
   "postgresql": {
     tooltip: "PostgreSQL",
     icon: SiPostgresql,
-    houseColour: "#336791"
+    houseColour: "#4169E1"
   },
   "aws": {
     tooltip: "AWS",
     icon: FaAws,
-    houseColour: "#FF9900"
+    houseColour: "#232F3E"
   },
   "sql": {
     tooltip: "SQL",
@@ -112,7 +113,7 @@ const iconMap = {
   "pytorch": {
     tooltip: "PyTorch",
     icon: SiPytorch,
-    houseColour: "#FF4F00"
+    houseColour: "#EE4C2C"
   },
   "cloudflare": {
     tooltip: "Cloudflare",
@@ -122,7 +123,7 @@ const iconMap = {
   "tailwindcss": {
     tooltip: "TailwindCSS",
     icon: SiTailwindcss,
-    houseColour: "#38BDF8"
+    houseColour: "#06B6D4"
   },
   "nextjs": {
     tooltip: "Next.js",
@@ -133,6 +134,11 @@ const iconMap = {
     tooltip: "JavaScript",
     icon: SiJavascript,
     houseColour: "#F7DF1E"
+  },
+  "shadcn": {
+    tooltip: "shadcn/ui",
+    icon: SiShadcnui,
+    houseColour: "#000000"
   }
 }
 
