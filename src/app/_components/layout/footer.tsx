@@ -36,13 +36,13 @@ export default function Footer() {
             Built with <a
               href="https://nextjs.org"
               target="_blank"
-              className="text-primary hover:text-primary-foreground"
+              className="text-primary hover:text-muted-foreground"
             >
               Next.js
             </a> and <a
               href="https://tailwindcss.com"
               target="_blank"
-              className="text-primary hover:text-primary-foreground"
+              className="text-primary hover:text-muted-foreground"
             >
               Tailwind CSS
             </a>
