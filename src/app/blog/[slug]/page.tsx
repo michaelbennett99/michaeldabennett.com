@@ -1,13 +1,9 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { posts } from '@/lib/content';
-
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
-
-import Alert from "./_components/alert";
 import Container from "@/components/container";
-import Header from "./_components/header";
 import PostHeader from "./_components/post_header";
 import PostBody from "./_components/post_body";
 
