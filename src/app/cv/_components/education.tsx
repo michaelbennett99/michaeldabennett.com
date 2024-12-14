@@ -1,11 +1,11 @@
-import { getAllEducation } from "@/lib/api";
+import { education } from '@/lib/content';
 import EducationCard from "./education_card";
 
 export default function Education() {
-  const education = getAllEducation();
+  const educationItems = education.getAll();
   return (
     <ul className="flex flex-col gap-4">
-      {education.map((education) => (
+      {educationItems.map((education) => (
         <li key={education.degree}>
           <EducationCard education={education} />
         </li>

@@ -1,8 +1,8 @@
-import { getAllProjects } from "@/lib/api";
+import { projects as projectsContent } from "@/lib/content";
 import ProjectCard from "./project_card";
 
 export default function Projects() {
-  const projects = getAllProjects();
+  const projects = projectsContent.getAll();
 
   return (
     <ul className="flex flex-col gap-2">

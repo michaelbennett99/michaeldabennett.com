@@ -1,8 +1,8 @@
-import { getAllExperience } from "@/lib/api";
+import { experience as experienceContent } from "@/lib/content";
 import ExperienceCard from "./experience_card";
 
 export default function Leadership() {
-  const experiences = getAllExperience();
+  const experiences = experienceContent.getAll();
   const leadershipExperience = experiences.filter(
     (exp) => exp.experienceType === "leadership"
   );
