@@ -14,7 +14,7 @@ export default function Header() {
       className={cn(
         "text-lg text-bold sticky top-0 border-b",
         "grid grid-cols-[auto,1fr]",
-        "text-foreground bg-background",
+        "text-foreground bg-background z-50",
       )}
     >
       <Link href="/" className="px-8 lg:px-16 py-4 flex items-center">
