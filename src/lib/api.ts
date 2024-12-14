@@ -8,141 +8,155 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-const postsDirectory = join(process.cwd(), "_posts");
-
-export function getPostSlugs() {
-  return fs.readdirSync(postsDirectory);
+// Generic type for items that can be sorted by date
+interface Sortable {
+  date?: string;
+  end_date?: string;
+  end_year?: number;
+  year?: number;
+  order?: number;
 }
 
-export function getPostBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(postsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
-
-  return { ...data, slug: realSlug, content } as Post;
+// Configuration type for content directories
+interface ContentConfig<T> {
+  directory: string;
+  extension: string;
+  parseContent?: boolean;
+  sortBy?: keyof T;
+  sortOrder?: 'asc' | 'desc';
 }
 
-export function getAllPosts(): Post[] {
-  const slugs = getPostSlugs();
-  const posts = slugs
-    .map((slug) => getPostBySlug(slug))
-    // sort posts by date in descending order
-    .sort((post1, post2) => (post1.date > post2.date ? -1 : 1));
-  return posts;
+const CONTENT_ROOT = process.cwd();
+
+// Generic function to get content from files
+function getContent<T extends Sortable>(config: ContentConfig<T>) {
+  const directory = join(CONTENT_ROOT, config.directory);
+
+  function getSlugs() {
+    return fs.readdirSync(directory);
+  }
+
+  function getBySlug(slug: string): T {
+    const realSlug = slug.replace(new RegExp(`\\.${config.extension}$`), "");
+    const fullPath = join(directory, `${realSlug}.${config.extension}`);
+    const fileContents = fs.readFileSync(fullPath, "utf8");
+
+    if (config.extension === 'md' && config.parseContent) {
+      const { data, content } = matter(fileContents);
+      return { ...data, slug: realSlug, content } as unknown as T;
+    }
+
+    return JSON.parse(fileContents) as T;
+  }
+
+  function getAll(): T[] {
+    const slugs = getSlugs();
+    const items = slugs.map((slug) => getBySlug(slug));
+
+    return sortItems(items, config.sortBy, config.sortOrder);
+  }
+
+  return {
+    getSlugs,
+    getBySlug,
+    getAll,
+  };
 }
 
-const projectsDirectory = join(process.cwd(), "_projects");
+// Helper function to sort items
+function sortItems<T extends Sortable>(
+  items: T[],
+  sortBy?: keyof T,
+  sortOrder: 'asc' | 'desc' = 'desc'
+): T[] {
+  if (!sortBy) return items;
 
-export function getProjectSlugs() {
-  return fs.readdirSync(projectsDirectory);
-}
+  return [...items].sort((a, b) => {
+    const valueA = a[sortBy];
+    const valueB = b[sortBy];
 
-export function getProjectBySlug(slug: string) {
-  const realSlug = slug.replace(/\.md$/, "");
-  const fullPath = join(projectsDirectory, `${realSlug}.md`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const { data, content } = matter(fileContents);
+    if (valueA instanceof Date || typeof valueA === 'string') {
+      const dateA = new Date(valueA as string);
+      const dateB = new Date(valueB as string);
+      return sortOrder === 'desc'
+        ? dateB.getTime() - dateA.getTime()
+        : dateA.getTime() - dateB.getTime();
+    }
 
-  return { ...data, content } as Project;
-}
+    if (typeof valueA === 'number' && typeof valueB === 'number') {
+      return sortOrder === 'desc' ? valueB - valueA : valueA - valueB;
+    }
 
-export function getAllProjects(): Project[] {
-  const slugs = getProjectSlugs();
-  const projects = slugs.map((slug) => getProjectBySlug(slug));
-  projects.sort((a, b) => (a.order || Infinity) - (b.order || Infinity));
-  return projects;
-}
-
-const educationDirectory = join(process.cwd(), "_cv/_education");
-
-export function getEducationSlugs() {
-  return fs.readdirSync(educationDirectory);
-}
-
-export function getEducationBySlug(slug: string) {
-  const realSlug = slug.replace(/\.json$/, "");
-  const fullPath = join(educationDirectory, `${realSlug}.json`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const obj = JSON.parse(fileContents);
-  return obj as Education;
-}
-
-export function getAllEducation(): Education[] {
-  const slugs = getEducationSlugs();
-  const education = slugs.map((slug) => getEducationBySlug(slug));
-  // Sort by end_year in descending order
-  education.sort((a, b) => b.end_year - a.end_year);
-  return education;
-}
-
-const experienceDirectory = join(process.cwd(), "_cv/_experience");
-
-export function getExperienceSlugs() {
-  return fs.readdirSync(experienceDirectory);
-}
-
-export function getExperienceBySlug(slug: string) {
-  const realSlug = slug.replace(/\.json$/, "");
-  const fullPath = join(experienceDirectory, `${realSlug}.json`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const obj = JSON.parse(fileContents);
-  return obj as Experience;
-}
-
-export function getAllExperience(): Experience[] {
-  const slugs = getExperienceSlugs();
-  const experience = slugs.map((slug) => getExperienceBySlug(slug));
-  // Sort by end_date in descending order
-  experience.sort((a, b) => {
-    // Convert date strings to comparable values
-    const dateA = new Date(a.end_date);
-    const dateB = new Date(b.end_date);
-    return dateB.getTime() - dateA.getTime();
+    return 0;
   });
-  return experience;
 }
 
-const awardsDirectory = join(process.cwd(), "_cv/_awards");
+// Content configurations
+const contentConfigs = {
+  posts: {
+    directory: '_posts',
+    extension: 'md',
+    parseContent: true,
+    sortBy: 'date' as const,
+  },
+  projects: {
+    directory: '_projects',
+    extension: 'md',
+    parseContent: true,
+    sortBy: 'order' as const,
+    sortOrder: 'asc' as const,
+  },
+  education: {
+    directory: '_cv/_education',
+    extension: 'json',
+    sortBy: 'end_year' as const,
+  },
+  experience: {
+    directory: '_cv/_experience',
+    extension: 'json',
+    sortBy: 'end_date' as const,
+  },
+  awards: {
+    directory: '_cv/_awards',
+    extension: 'json',
+    sortBy: 'year' as const,
+  },
+  publications: {
+    directory: '_cv/_publications',
+    extension: 'json',
+    sortBy: 'year' as const,
+  },
+};
 
-export function getAwardSlugs() {
-  return fs.readdirSync(awardsDirectory);
-}
+// Create content handlers
+const posts = getContent<Post>(contentConfigs.posts);
+const projects = getContent<Project>(contentConfigs.projects);
+const education = getContent<Education>(contentConfigs.education);
+const experience = getContent<Experience>(contentConfigs.experience);
+const awards = getContent<Award>(contentConfigs.awards);
+const publications = getContent<Publication>(contentConfigs.publications);
 
-export function getAwardBySlug(slug: string) {
-  const realSlug = slug.replace(/\.json$/, "");
-  const fullPath = join(awardsDirectory, `${realSlug}.json`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const obj = JSON.parse(fileContents);
-  return obj as Award;
-}
+// Export the same API interface as before
+export const getPostSlugs = posts.getSlugs;
+export const getPostBySlug = posts.getBySlug;
+export const getAllPosts = posts.getAll;
 
-export function getAllAwards(): Award[] {
-  const slugs = getAwardSlugs();
-  const awards = slugs.map((slug) => getAwardBySlug(slug));
-  // Sort by year in descending order
-  awards.sort((a, b) => b.year - a.year);
-  return awards;
-}
+export const getProjectSlugs = projects.getSlugs;
+export const getProjectBySlug = projects.getBySlug;
+export const getAllProjects = projects.getAll;
 
-const publicationsDirectory = join(process.cwd(), "_cv/_publications");
+export const getEducationSlugs = education.getSlugs;
+export const getEducationBySlug = education.getBySlug;
+export const getAllEducation = education.getAll;
 
-export function getPublicationSlugs() {
-  return fs.readdirSync(publicationsDirectory);
-}
+export const getExperienceSlugs = experience.getSlugs;
+export const getExperienceBySlug = experience.getBySlug;
+export const getAllExperience = experience.getAll;
 
-export function getPublicationBySlug(slug: string) {
-  const realSlug = slug.replace(/\.json$/, "");
-  const fullPath = join(publicationsDirectory, `${realSlug}.json`);
-  const fileContents = fs.readFileSync(fullPath, "utf8");
-  const obj = JSON.parse(fileContents);
-  return obj as Publication;
-}
+export const getAwardSlugs = awards.getSlugs;
+export const getAwardBySlug = awards.getBySlug;
+export const getAllAwards = awards.getAll;
 
-export function getAllPublications(): Publication[] {
-  const slugs = getPublicationSlugs();
-  const publications = slugs.map((slug) => getPublicationBySlug(slug));
-  // Sort by year in descending order
-  publications.sort((a, b) => b.year - a.year);
-  return publications;
-}
+export const getPublicationSlugs = publications.getSlugs;
+export const getPublicationBySlug = publications.getBySlug;
+export const getAllPublications = publications.getAll;
