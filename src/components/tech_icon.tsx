@@ -5,11 +5,11 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { TechDependency } from "@/interfaces/tech_dependency";
+import { IconName } from "@/interfaces/icon_name";
 import iconMap from "@/interfaces/icon_map";
 
 type Props = {
-  icon: TechDependency
+  icon: IconName
   applyHouseColour?: boolean
   tooltip?: boolean
 }
