@@ -1,9 +1,9 @@
 import { Proficiency } from "./proficiency";
-import { TechDependency } from "./tech_dependency";
+import { IconName } from "./icon_name";
 
 export interface Skill {
   name: string;
-  icon?: TechDependency;
+  icon?: IconName;
   proficiency: Proficiency;
 }
 

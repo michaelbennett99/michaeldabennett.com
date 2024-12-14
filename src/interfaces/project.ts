@@ -1,4 +1,4 @@
-import { TechDependency } from "./tech_dependency";
+import { IconName } from "./icon_name";
 
 export interface Project {
   name: string;
@@ -6,5 +6,5 @@ export interface Project {
   githubUrl: string;
   content: string;
   order?: number;
-  techStack?: TechDependency[];
+  techStack?: IconName[];
 }
