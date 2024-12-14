@@ -38,11 +38,7 @@ export default function CV() {
             <Projects />
           </Section>
           <Section title="Skills">
-            <SkillsSection title="Technical Skills">
-              <Skills />
-            </SkillsSection>
-            <SkillsSection title="Soft Skills">
-            </SkillsSection>
+            <Skills />
           </Section>
           <Section title="Awards">
             <Awards />
