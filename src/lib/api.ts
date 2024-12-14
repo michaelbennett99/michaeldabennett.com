@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
+import { SkillCategory } from "@/interfaces/skill";
 
 // Generic type for items that can be sorted by date
 interface Sortable {
@@ -9,6 +10,7 @@ interface Sortable {
   end_year?: number;
   year?: number;
   order?: number;
+  proficiency?: string;
 }
 
 // Configuration type for content directories
@@ -81,6 +83,17 @@ function sortItems<T extends Sortable>(
       return sortOrder === 'desc' ? valueB - valueA : valueA - valueB;
     }
 
+    if (
+      sortBy === 'proficiency' &&
+      typeof valueA === 'string' &&
+      typeof valueB === 'string'
+    ) {
+      const proficiencyOrder = ['Beginner', 'Intermediate', 'Advanced'];
+      const indexA = proficiencyOrder.indexOf(valueA);
+      const indexB = proficiencyOrder.indexOf(valueB);
+      return sortOrder === 'desc' ? indexB - indexA : indexA - indexB;
+    }
+
     return 0;
   });
 }
@@ -119,6 +132,11 @@ const contentConfigs = {
     directory: '_cv/_publications',
     extension: 'json',
     sortBy: 'year' as const,
+  },
+  skills: {
+    directory: '_cv/_skills',
+    extension: 'json',
+    sortBy: 'order' as const,
   },
 };
 
