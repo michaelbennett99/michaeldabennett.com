@@ -3,6 +3,7 @@ name: "BellmanSolver.jl"
 url: "https://michaelbennett99.github.io/BellmanSolver.jl/current/"
 githubUrl: "https://github.com/michaelbennett99/BellmanSolver.jl"
 order: 5
+techStack: ["julia"]
 ---
 
 A Julia package which provides methods for solving dynamic programming problems

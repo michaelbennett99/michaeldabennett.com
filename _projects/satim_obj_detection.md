@@ -2,6 +2,7 @@
 name: "Object Detection in Aerial Images"
 githubUrl: "https://github.com/michaelbennett99/Satim-Object-Detection"
 order: 8
+techStack: ["python", "pytorch"]
 ---
 
 A Deep Learning project that trains the YOLOv8-obb object detection model on

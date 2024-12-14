@@ -3,6 +3,7 @@ name: "gendata.py"
 url: "https://michaelbennett99.github.io/gendata_package/index.html"
 githubUrl: "https://github.com/michaelbennett99/gendata_package"
 order: 4
+techStack: ["python"]
 ---
 
 A Python package that provides a very simple interface for reading and
