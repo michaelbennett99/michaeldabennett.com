@@ -41,7 +41,7 @@ export default function ProjectCard({ project }: Props) {
           && <ul className="flex flex-row gap-2">
             {project.techStack.map((tech) => (
               <li key={tech}>
-                <TechIcon icon={tech} applyHouseColour={true} />
+                <TechIcon icon={tech} applyHouseColour={true} tooltip={true} />
               </li>
             ))}
           </ul>
