@@ -128,35 +128,7 @@ const contentConfigs = {
   },
 };
 
-// Create content handlers
-const posts = getContent<Post>(contentConfigs.posts);
-const projects = getContent<Project>(contentConfigs.projects);
-const education = getContent<Education>(contentConfigs.education);
-const experience = getContent<Experience>(contentConfigs.experience);
-const awards = getContent<Award>(contentConfigs.awards);
-const publications = getContent<Publication>(contentConfigs.publications);
-
-// Export the same API interface as before
-export const getPostSlugs = posts.getSlugs;
-export const getPostBySlug = posts.getBySlug;
-export const getAllPosts = posts.getAll;
-
-export const getProjectSlugs = projects.getSlugs;
-export const getProjectBySlug = projects.getBySlug;
-export const getAllProjects = projects.getAll;
-
-export const getEducationSlugs = education.getSlugs;
-export const getEducationBySlug = education.getBySlug;
-export const getAllEducation = education.getAll;
-
-export const getExperienceSlugs = experience.getSlugs;
-export const getExperienceBySlug = experience.getBySlug;
-export const getAllExperience = experience.getAll;
-
-export const getAwardSlugs = awards.getSlugs;
-export const getAwardBySlug = awards.getBySlug;
-export const getAllAwards = awards.getAll;
-
-export const getPublicationSlugs = publications.getSlugs;
-export const getPublicationBySlug = publications.getBySlug;
-export const getAllPublications = publications.getAll;
+// Export the core functionality and configs
+export { getContent };
+export { contentConfigs };
+export type { ContentConfig, Sortable };

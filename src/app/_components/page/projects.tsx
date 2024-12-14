@@ -1,14 +1,14 @@
 import Subsection from "./subsection";
 import ProjectCard from "./project_card";
-import { getAllProjects } from "@/lib/api";
+import { projects } from '@/lib/content';
 
 export default function Projects() {
-  const projects = getAllProjects();
+  const allProjects = projects.getAll();
 
   return (
     <Subsection title="Projects">
       <ul className="flex flex-col justify-center gap-4">
-        {projects.map((project) => (
+        {allProjects.map((project) => (
           <li key={project.name.toLowerCase().replace(/\s+/g, '_')}>
             <ProjectCard project={project} />
           </li>

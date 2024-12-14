@@ -1,8 +1,8 @@
-import { getAllPublications } from "@/lib/api";
+import { publications as publicationsContent } from "@/lib/content";
 import PublicationCard from "./publication_card";
 
 export default function Publications() {
-  const publications = getAllPublications();
+  const publications = publicationsContent.getAll();
 
   return (
     <ul className="flex flex-col gap-2">

@@ -1,8 +1,8 @@
-import { getAllExperience } from "@/lib/api";
+import { experience } from '@/lib/content';
 import ExperienceCard from "./experience_card";
 
 export default function Experience() {
-  const experiences = getAllExperience();
+  const experiences = experience.getAll();
   const professionalExperience = experiences.filter(
     (exp) => exp.experienceType === "professional"
   );

@@ -1,8 +1,8 @@
-import { getAllAwards } from "@/lib/api";
+import { awards as awardsContent } from "@/lib/content";
 import AwardsCard from "./awards_card";
 
 export default function Awards() {
-  const awards = getAllAwards();
+  const awards = awardsContent.getAll();
 
   return (
     <ul className="flex flex-col gap-2">
