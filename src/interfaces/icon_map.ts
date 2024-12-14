@@ -19,7 +19,10 @@ import {
   SiTailwindcss,
   SiNextdotjs,
   SiJavascript,
-  SiShadcnui
+  SiShadcnui,
+  SiStrava,
+  SiGithub,
+  SiLinkedin
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
@@ -139,6 +142,21 @@ const iconMap = {
     tooltip: "shadcn/ui",
     icon: SiShadcnui,
     houseColour: "#000000"
+  },
+  "strava": {
+    tooltip: "Strava",
+    icon: SiStrava,
+    houseColour: "#FC4C02"
+  },
+  "github": {
+    tooltip: "GitHub",
+    icon: SiGithub,
+    houseColour: "#181717"
+  },
+  "linkedin": {
+    tooltip: "LinkedIn",
+    icon: SiLinkedin,
+    houseColour: "#0A66C2"
   }
 }
 
