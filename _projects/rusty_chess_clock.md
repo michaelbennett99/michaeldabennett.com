@@ -3,6 +3,7 @@ name: "Rusty Chess Clock"
 url: "https://crates.io/crates/rusty_chess_clock"
 githubUrl: "https://github.com/michaelbennett99/rusty_chess_clock"
 order: 3
+techStack: ["rust"]
 ---
 
 Customisable chess clock GUI (using iced-rs) and CLI (using termion)
