@@ -1,5 +1,5 @@
 ---
-name: "Object Detection in Aerial Images"
+name: "Aerial Image Object Detection"
 githubUrl: "https://github.com/michaelbennett99/Satim-Object-Detection"
 order: 8
 techStack: ["python", "pytorch"]
