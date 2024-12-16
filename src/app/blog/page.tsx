@@ -16,14 +16,22 @@ export default function Blog() {
         <section>
           <PageHeading title="Blog" />
         </section>
-        <HeroPost
-          title={heroPost.title}
-          date={heroPost.date}
-          author={heroPost.author}
-          slug={heroPost.slug}
-          excerpt={heroPost.excerpt}
-        />
-        {morePosts.length > 0 && <MorePosts posts={morePosts} />}
+        {heroPost ? (
+          <div>
+            <HeroPost
+              title={heroPost.title}
+              date={heroPost.date}
+              author={heroPost.author}
+              slug={heroPost.slug}
+              excerpt={heroPost.excerpt}
+            />
+            {morePosts.length > 0 && <MorePosts posts={morePosts} />}
+          </div>
+        ) : (
+          <div>
+            <p>No posts found. Check back soon!</p>
+          </div>
+        )}
       </Container>
     </Main>
   );
