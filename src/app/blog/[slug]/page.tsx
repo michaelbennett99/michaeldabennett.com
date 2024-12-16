@@ -1,9 +1,13 @@
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
+
 import { posts } from '@/lib/content';
 import { CMS_NAME } from "@/lib/constants";
 import markdownToHtml from "@/lib/markdownToHtml";
+
+import Main from "@/components/main";
 import Container from "@/components/container";
+
 import PostHeader from "./_components/post_header";
 import PostBody from "./_components/post_body";
 
@@ -22,7 +26,7 @@ export default async function Post({ params }: Params) {
   const content = await markdownToHtml(post.content || "");
 
   return (
-    <main>
+    <Main>
       <Container className="mt-16">
         <article>
           <PostHeader
@@ -33,7 +37,7 @@ export default async function Post({ params }: Params) {
           <PostBody content={content} />
         </article>
       </Container>
-    </main>
+    </Main>
   )
 }
 

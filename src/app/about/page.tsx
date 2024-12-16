@@ -3,7 +3,7 @@ import PageHeading from "@/components/page_heading";
 
 export default function About() {
   return (
-    <main>
+    <main className="flex-1">
       <Container>
         <PageHeading title="About" />
       </Container>

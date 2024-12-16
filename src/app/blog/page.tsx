@@ -3,6 +3,7 @@ import HeroPost from "./_components/hero_post";
 import MorePosts from "./_components/more_posts";
 import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
+import Main from "@/components/main";
 
 export default function Blog() {
   const allPosts = postsContent.getAll();
@@ -10,7 +11,7 @@ export default function Blog() {
   const morePosts = allPosts.slice(1);
 
   return (
-    <main>
+    <Main>
       <Container>
         <section>
           <PageHeading title="Blog" />
@@ -25,6 +26,6 @@ export default function Blog() {
         />
         {morePosts.length > 0 && <MorePosts posts={morePosts} />}
       </Container>
-    </main>
+    </Main>
   );
 }
