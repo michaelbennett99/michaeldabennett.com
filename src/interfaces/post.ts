@@ -8,5 +8,5 @@ export type Post = {
     coverImage?: string;
     excerpt: string;
     content: string;
-    preview?: boolean
+    draft?: boolean
 }
