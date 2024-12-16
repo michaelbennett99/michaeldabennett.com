@@ -26,6 +26,13 @@ import {
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
+import { IconType } from "react-icons";
+
+type IconMapItem = {
+  tooltip: string;
+  icon: IconType;
+  houseColour: string;
+}
 
 const iconMap = {
   "python": {
@@ -158,6 +165,9 @@ const iconMap = {
     icon: SiLinkedin,
     houseColour: "#0A66C2"
   }
-}
+} as const;
 
+type IconMapKeys = keyof typeof iconMap;
+
+export type { IconMapItem, IconMapKeys };
 export default iconMap;

@@ -5,11 +5,12 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 
-import { IconName } from "@/interfaces/icon_name";
+import { isDark } from "@/lib/colour";
+import { IconMapItem, IconMapKeys } from "@/interfaces/icon_map";
 import iconMap from "@/interfaces/icon_map";
 
 type Props = {
-  icon: IconName
+  icon: IconMapKeys
   applyHouseColour?: boolean
   tooltip?: boolean
 }
@@ -17,13 +18,18 @@ type Props = {
 export default function TechIcon(
   { icon, applyHouseColour = false, tooltip }: Props
 ) {
-  const iconObject = iconMap[icon];
+  const iconObject: IconMapItem = iconMap[icon];
   if (!iconObject) {
     throw new Error(`Icon ${icon} not found`);
   }
   const iconElement = (
     <iconObject.icon
-      style={{ color: applyHouseColour ? iconObject.houseColour : "inherit" }}
+      style={{
+        color: applyHouseColour
+          ? iconObject.houseColour
+          : "inherit"
+      }}
+      className={isDark(iconObject.houseColour) ? "dark:invert" : ""}
     />
   )
 
