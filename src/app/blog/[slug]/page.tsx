@@ -56,8 +56,5 @@ export async function generateMetadata(props: Params): Promise<Metadata> {
 }
 
 export async function generateStaticParams() {
-  const slugs = posts.getSlugs();
-  return slugs.map((slug) => ({
-    slug: slug.replace(/\.md$/, ''),
-  }));
+  return posts.generateStaticParams();
 }

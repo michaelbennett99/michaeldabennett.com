@@ -4,6 +4,7 @@ import { join } from "path";
 
 import { Sortable } from "@/interfaces/sortable";
 import { Draftable } from "@/interfaces/draftable";
+import { Slug } from "@/interfaces/slug";
 
 // Configuration type for content directories
 interface ContentConfig<T> {
@@ -17,7 +18,9 @@ interface ContentConfig<T> {
 const CONTENT_ROOT = process.cwd();
 
 // Generic function to get content from files
-function getContent<T extends Sortable & Draftable>(config: ContentConfig<T>) {
+function getContent<T extends Sortable & Draftable & Slug>(
+  config: ContentConfig<T>
+) {
   const directory = join(CONTENT_ROOT, config.directory);
 
   function getSlugs() {
@@ -46,10 +49,18 @@ function getContent<T extends Sortable & Draftable>(config: ContentConfig<T>) {
     return sortItems(items, config.sortBy, config.sortOrder);
   }
 
+  function generateStaticParams(): Slug[] {
+    return getAll()
+      .map((item) => ({ slug: item.slug?.replace(
+        new RegExp(`\\.${config.extension}$`), ''
+      ) }));
+  }
+
   return {
     getSlugs,
     getBySlug,
     getAll,
+    generateStaticParams,
   };
 }
 
