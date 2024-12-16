@@ -2,15 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
 
-// Generic type for items that can be sorted by date
-interface Sortable {
-  date?: string;
-  end_date?: string;
-  end_year?: number;
-  year?: number;
-  order?: number;
-  proficiency?: string;
-}
+import { Sortable } from "@/interfaces/sortable";
+import { Draftable } from "@/interfaces/draftable";
 
 // Configuration type for content directories
 interface ContentConfig<T> {
@@ -24,7 +17,7 @@ interface ContentConfig<T> {
 const CONTENT_ROOT = process.cwd();
 
 // Generic function to get content from files
-function getContent<T extends Sortable>(config: ContentConfig<T>) {
+function getContent<T extends Sortable & Draftable>(config: ContentConfig<T>) {
   const directory = join(CONTENT_ROOT, config.directory);
 
   function getSlugs() {
@@ -46,7 +39,9 @@ function getContent<T extends Sortable>(config: ContentConfig<T>) {
 
   function getAll(): T[] {
     const slugs = getSlugs();
-    const items = slugs.map((slug) => getBySlug(slug));
+    const items = slugs
+      .map((slug) => getBySlug(slug))
+      .filter(filterDrafts<T>());
 
     return sortItems(items, config.sortBy, config.sortOrder);
   }
@@ -95,6 +90,12 @@ function sortItems<T extends Sortable>(
 
     return 0;
   });
+}
+
+function filterDrafts<T extends Draftable>(): (item: T) => boolean {
+  return process.env.NODE_ENV === 'production'
+    ? (item) => item.draft === undefined || item.draft === false
+    : () => true
 }
 
 // Content configurations
