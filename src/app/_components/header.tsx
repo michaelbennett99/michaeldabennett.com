@@ -1,10 +1,10 @@
-import { usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaGithub } from "react-icons/fa";
 import { cn } from "@/lib/utils";
 
-import DarkModeToggle from "@/app/_components/layout/dark_mode_toggle";
 import SocialLink from "@/components/social_link";
+
+import DarkModeToggle from "./dark_mode_toggle";
 import NavBar from "./nav_bar";
 import NavButton from "./nav_button";
 
