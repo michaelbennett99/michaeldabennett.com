@@ -1,5 +1,5 @@
 import { Proficiency } from "./proficiency";
-import { IconName } from "./icon_name";
+import { IconName } from "./icon_map";
 
 export interface Skill {
   name: string;
