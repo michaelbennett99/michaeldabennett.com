@@ -1,3 +1,4 @@
+import Main from "@/components/main";
 import Container from "@/components/container";
 import PageHeading from "@/components/page_heading";
 
@@ -10,12 +11,11 @@ import Experience from "./_components/experience";
 import Leadership from "./_components/leadership";
 import Awards from "./_components/awards";
 import Publications from "./_components/publications";
-import SkillsSection from "./_components/skills/skills_section";
 
 
 export default function CV() {
   return (
-    <main>
+    <Main>
       <Container>
         <PageHeading title="CV" />
         <div className="flex justify-center my-8">
@@ -45,6 +45,6 @@ export default function CV() {
           </Section>
         </div>
       </Container>
-    </main>
+    </Main>
   );
 }
