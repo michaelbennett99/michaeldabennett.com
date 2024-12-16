@@ -1,6 +1,5 @@
 import Container from "@/components/container";
 import { EXAMPLE_PATH } from "@/lib/constants";
-import { cn } from "@/lib/utils";
 
 type Props = {
   preview?: boolean;

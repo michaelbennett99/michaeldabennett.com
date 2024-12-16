@@ -1,7 +1,6 @@
 import fs from "fs";
 import matter from "gray-matter";
 import { join } from "path";
-import { SkillCategory } from "@/interfaces/skill";
 
 // Generic type for items that can be sorted by date
 interface Sortable {
