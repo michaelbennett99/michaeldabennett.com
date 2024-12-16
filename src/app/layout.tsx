@@ -2,11 +2,11 @@
 
 import "./globals.css";
 
-import Header from "./_components/layout/header";
-import Footer from "./_components/layout/footer";
-import Head from "./_components/layout/head";
-import XThemeProvider from "../components/theme_provider";
+import Header from "./_components/header";
+import Footer from "./_components/footer";
+import Head from "./_components/head";
 
+import XThemeProvider from "@/components/theme_provider";
 import { Toaster } from "@/components/ui/toaster";
 
 export default function RootLayout({

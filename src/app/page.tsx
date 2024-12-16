@@ -1,9 +1,9 @@
 import Main from "@/components/main";
 import Container from "@/components/container";
 
-import Header from "./_components/page/header";
-import AboutMe from "./_components/page/about_me";
-import Projects from "./_components/page/projects";
+import Header from "@/app/_landing/_components/header";
+import AboutMe from "@/app/_landing/_components/about_me";
+import Projects from "@/app/_landing/_components/projects";
 
 export default function Home() {
   return (
