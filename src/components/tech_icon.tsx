@@ -6,11 +6,11 @@ import {
 } from "@/components/ui/tooltip";
 
 import { isDark } from "@/lib/colour";
-import { IconMapItem, IconMapKeys } from "@/interfaces/icon_map";
+import { IconName, Icon } from "@/interfaces/icon_map";
 import iconMap from "@/interfaces/icon_map";
 
 type Props = {
-  icon: IconMapKeys
+  icon: IconName
   applyHouseColour?: boolean
   tooltip?: boolean
 }
@@ -18,7 +18,7 @@ type Props = {
 export default function TechIcon(
   { icon, applyHouseColour = false, tooltip }: Props
 ) {
-  const iconObject: IconMapItem = iconMap[icon];
+  const iconObject: Icon = iconMap[icon];
   if (!iconObject) {
     throw new Error(`Icon ${icon} not found`);
   }

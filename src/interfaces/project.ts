@@ -1,4 +1,4 @@
-import { IconName } from "./icon_name";
+import { IconName } from "./icon_map";
 
 export interface Project {
   name: string;

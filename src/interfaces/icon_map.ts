@@ -28,7 +28,7 @@ import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
 import { IconType } from "react-icons";
 
-type IconMapItem = {
+type Icon = {
   tooltip: string;
   icon: IconType;
   houseColour: string;
@@ -167,7 +167,7 @@ const iconMap = {
   }
 } as const;
 
-type IconMapKeys = keyof typeof iconMap;
+type IconName = keyof typeof iconMap;
 
-export type { IconMapItem, IconMapKeys };
+export type { IconName, Icon };
 export default iconMap;
