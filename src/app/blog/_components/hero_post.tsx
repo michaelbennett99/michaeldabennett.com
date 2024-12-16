@@ -2,7 +2,6 @@ import { type Author } from "@/interfaces/author";
 import Link from "next/link";
 import Avatar from "@/app/blog/_components/avatar";
 import DateFormatter from "@/components/date_formatter";
-import CoverImage from "./cover_image";
 
 type Props = {
   title: string;
@@ -10,19 +9,13 @@ type Props = {
   excerpt: string;
   author: Author;
   slug: string;
-  coverImage?: string;
 }
 
 export default function HeroPost(
-  { title, date, excerpt, author, slug, coverImage }: Props
+  { title, date, excerpt, author, slug }: Props
 ) {
   return (
     <section id={slug}>
-      {coverImage && (
-        <div className="mb-8">
-          <CoverImage title={title} src={coverImage} slug={slug} />
-        </div>
-      )}
       <div
         className="flex flex-col sm:flex-row gap-x-8 gap-y-4 mb-16 justify-between"
       >
