@@ -50,10 +50,10 @@ function getContent<T extends Sortable & Draftable & Slug>(
   }
 
   function generateStaticParams(): Slug[] {
-    return getAll()
-      .map((item) => ({ slug: item.slug?.replace(
-        new RegExp(`\\.${config.extension}$`), ''
-      ) }));
+    const items = getAll()
+      .map((item) => ({ slug: item.slug }))
+      .filter((item) => item.slug !== undefined);
+    return items;
   }
 
   return {
