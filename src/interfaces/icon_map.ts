@@ -22,7 +22,9 @@ import {
   SiShadcnui,
   SiStrava,
   SiGithub,
-  SiLinkedin
+  SiLinkedin,
+  SiGithubpages,
+  SiGithubactions
 } from "react-icons/si";
 import { TbSql } from "react-icons/tb";
 import { FaAws } from "react-icons/fa";
@@ -164,6 +166,16 @@ const iconMap = {
     tooltip: "LinkedIn",
     icon: SiLinkedin,
     houseColour: "#0A66C2"
+  },
+  "githubpages": {
+    tooltip: "GitHub Pages",
+    icon: SiGithubpages,
+    houseColour: "#181717"
+  },
+  "githubactions": {
+    tooltip: "GitHub Actions",
+    icon: SiGithubactions,
+    houseColour: "#2088FF"
   }
 } as const;
 
