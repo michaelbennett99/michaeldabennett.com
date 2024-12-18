@@ -1,29 +1,24 @@
-import { useTheme } from "next-themes";
 import Image from "next/image";
-export default function Footer() {
-  const { theme } = useTheme();
 
+export default function Footer() {
   return (
     <footer className="text-muted-foreground bg-muted border-t text-sm py-4">
       <div className="flex flex-row justify-around items-center">
-        <div>
-          {
-            theme === "dark"
-            ? <Image
-              src="/images/logo.white.png"
-              alt="Michael Bennett"
-              width={100}
-              height={100}
-              className="rounded-full"
-            />
-            : <Image
-              src="/images/logo.black.png"
-              alt="Michael Bennett"
-              width={100}
-              height={100}
-              className="rounded-full"
-            />
-          }
+        <div className="rounded-full">
+          <Image
+            src="/images/logo.white.png"
+            alt="Michael Bennett"
+            width={100}
+            height={100}
+            className="hidden dark:block"
+          />
+          <Image
+            src="/images/logo.black.png"
+            alt="Michael Bennett"
+            width={100}
+            height={100}
+            className="block dark:hidden"
+          />
         </div>
         <div>
           <div className="text-center">
