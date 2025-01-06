@@ -1,3 +1,5 @@
+import { cn } from "@/lib/utils";
+
 import { FaChevronRight } from "react-icons/fa";
 
 import { skills } from "@/lib/content";
@@ -14,7 +16,12 @@ export default function Skills() {
     <div>
       {skillCategories.map((category) => (
         <SkillsSection key={category.title} title={category.title}>
-          <CardBody className="grid grid-cols-3 md:grid-cols-5 gap-2 justify-items-center">
+          <CardBody className={cn(
+            "grid grid-cols-3 md:grid-cols-5 gap-2",
+            category.align === "left"
+              ? "justify-items-start"
+              : "justify-items-center"
+          )}>
             {category.skills.map((skill) => (
               <Skill
                 key={skill.name}

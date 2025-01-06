@@ -1,0 +1,56 @@
+{
+  "title": "Programming Languages",
+  "skills": [
+    {
+      "name": "TypeScript",
+      "icon": "typescript",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "React",
+      "icon": "react",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "Go",
+      "icon": "go",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "Python",
+      "icon": "python",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "SQL",
+      "icon": "sql",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "C++",
+      "icon": "c++",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Rust",
+      "icon": "rust",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Julia",
+      "icon": "julia",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Haskell",
+      "icon": "haskell",
+      "proficiency": "Beginner"
+    },
+    {
+      "name": "Bash",
+      "icon": "bash",
+      "proficiency": "Intermediate"
+    }
+  ],
+  "order": 3
+}

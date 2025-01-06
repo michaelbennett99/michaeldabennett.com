@@ -9,7 +9,14 @@
     },
     {
       "name": "Problem Solving"
+    },
+    {
+      "name": "Research"
+    },
+    {
+      "name": "Organisation"
     }
   ],
-  "order": 1
+  "order": 0,
+  "align": "left"
 }

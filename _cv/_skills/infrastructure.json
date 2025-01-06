@@ -1,0 +1,51 @@
+{
+  "title": "Infrastructure and Tools",
+  "skills": [
+    {
+      "name": "Docker",
+      "icon": "docker",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "Git",
+      "icon": "git",
+      "proficiency": "Advanced"
+    },
+    {
+      "name": "AWS",
+      "icon": "aws",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Linux",
+      "icon": "linux",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "PostgreSQL",
+      "icon": "postgresql",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "HTML",
+      "icon": "html",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "CSS",
+      "icon": "css",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Next.js",
+      "icon": "nextjs",
+      "proficiency": "Intermediate"
+    },
+    {
+      "name": "Tailwind",
+      "icon": "tailwindcss",
+      "proficiency": "Intermediate"
+    }
+  ],
+  "order": 2
+}

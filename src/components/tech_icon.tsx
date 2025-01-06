@@ -1,3 +1,5 @@
+import { FaQuestion } from "react-icons/fa";
+
 import {
   Tooltip,
   TooltipContent,
@@ -20,7 +22,7 @@ export default function TechIcon(
 ) {
   const iconObject: Icon = iconMap[icon];
   if (!iconObject) {
-    throw new Error(`Icon ${icon} not found`);
+    return <FaQuestion />
   }
   const iconElement = (
     <iconObject.icon

@@ -1,0 +1,22 @@
+{
+  "title": "Quantitative",
+  "skills": [
+    {
+      "name": "Statistics"
+    },
+    {
+      "name": "Econometrics"
+    },
+    {
+      "name": "Machine Learning"
+    },
+    {
+      "name": "Deep Learning"
+    },
+    {
+      "name": "Data Visualisation"
+    }
+  ],
+  "order": 0.5,
+  "align": "left"
+}

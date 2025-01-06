@@ -11,4 +11,5 @@ export interface SkillCategory {
   title: string;
   skills: Skill[];
   order: number;
+  align?: "left" | "center";
 }
