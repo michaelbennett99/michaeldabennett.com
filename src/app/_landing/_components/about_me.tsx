@@ -1,12 +1,10 @@
+import { default as AboutMeBase } from "@/app/_components/about_me";
 import Subsection from "./subsection";
 
 export default function AboutMe() {
   return (
     <Subsection title="About Me">
-      <p>
-        I am a software engineer with a passion for building products that
-        make a difference.
-      </p>
+      <AboutMeBase abridged={true} />
     </Subsection>
   );
 }
