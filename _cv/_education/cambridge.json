@@ -6,10 +6,10 @@
   "end_year": 2020,
   "grade": "First Class",
   "modules": [
-    "Microeconomics",
-    "Macroeconomics",
+    "Advanced Microeconomics",
+    "Advanced Macroeconomics",
     "Advanced Econometrics",
-    "Real Analysis"
+    "Mathematical Economics"
   ],
   "project": {
     "name": "Dissertation",
