@@ -7,6 +7,11 @@
       "proficiency": "Advanced"
     },
     {
+      "name": "React",
+      "icon": "react",
+      "proficiency": "Advanced"
+    },
+    {
       "name": "Go",
       "icon": "go",
       "proficiency": "Advanced"
@@ -17,6 +22,11 @@
       "proficiency": "Advanced"
     },
     {
+      "name": "C++",
+      "icon": "c++",
+      "proficiency": "Intermediate"
+    },
+    {
       "name": "HTML",
       "icon": "html",
       "proficiency": "Intermediate"
@@ -24,11 +34,6 @@
     {
       "name": "CSS",
       "icon": "css",
-      "proficiency": "Intermediate"
-    },
-    {
-      "name": "React",
-      "icon": "react",
       "proficiency": "Intermediate"
     },
     {
@@ -79,11 +84,6 @@
     {
       "name": "Haskell",
       "icon": "haskell",
-      "proficiency": "Beginner"
-    },
-    {
-      "name": "C++",
-      "icon": "c++",
       "proficiency": "Beginner"
     }
   ],
