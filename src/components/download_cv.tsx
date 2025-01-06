@@ -5,7 +5,7 @@ import Link from "next/link";
 export default function DownloadCV() {
   return (
     <Button asChild>
-      <Link href="/resume.pdf" target="_blank">
+      <Link href="/CV.pdf" target="_blank">
         <SiReaddotcv /> Download CV
       </Link>
     </Button>
