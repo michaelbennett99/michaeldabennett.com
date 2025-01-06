@@ -1,4 +1,4 @@
-import Avatar from "@/app/blog/_components/avatar";
+import Avatar from "@/app/_blog/_components/avatar";
 import DateFormatter from "@/components/date_formatter";
 import PostTitle from "./post_title";
 import { type Author } from "@/interfaces/author";

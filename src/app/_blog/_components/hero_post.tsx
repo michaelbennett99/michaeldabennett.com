@@ -1,6 +1,6 @@
 import { type Author } from "@/interfaces/author";
 import Link from "next/link";
-import Avatar from "@/app/blog/_components/avatar";
+import Avatar from "@/app/_blog/_components/avatar";
 import DateFormatter from "@/components/date_formatter";
 
 type Props = {
