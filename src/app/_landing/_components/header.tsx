@@ -19,10 +19,6 @@ export default function Header() {
           href="https://www.linkedin.com/in/michaeldabennett"
           icon={<TechIcon icon="linkedin" applyHouseColour />}
         />
-        <SocialLink
-          href="https://www.strava.com/athletes/25477476"
-          icon={<TechIcon icon="strava" applyHouseColour />}
-        />
       </nav>
       <DownloadCV />
     </header>
