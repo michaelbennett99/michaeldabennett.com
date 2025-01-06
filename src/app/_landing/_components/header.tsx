@@ -16,7 +16,7 @@ export default function Header() {
           icon={<TechIcon icon="github" applyHouseColour />}
         />
         <SocialLink
-          href="https://www.linkedin.com/in/michaeldabennett"
+          href="https://www.linkedin.com/in/mdabennett99"
           icon={<TechIcon icon="linkedin" applyHouseColour />}
         />
       </nav>
