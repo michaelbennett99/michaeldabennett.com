@@ -29,7 +29,9 @@ export default function TechIcon(
           ? iconObject.houseColour
           : "inherit"
       }}
-      className={isDark(iconObject.houseColour) ? "dark:invert" : ""}
+      className={
+        applyHouseColour && isDark(iconObject.houseColour) ? "dark:invert" : ""
+      }
     />
   )
 
