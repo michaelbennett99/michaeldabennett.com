@@ -5,7 +5,7 @@ import { FaChevronRight } from "react-icons/fa";
 import { skills } from "@/lib/content";
 
 import TechIcon from "@/components/tech_icon";
-import CardBody from "@/app/cv/_components/card_body";
+import CardBody from "@/app/_cv/_components/card_body";
 import Skill from "./skill";
 import SkillsSection from "./skills_section";
 
