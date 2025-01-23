@@ -1,7 +1,6 @@
 import TechIcon from "@/components/tech_icon";
 
 import SocialLink from "@/components/social_link";
-import DownloadCV from "@/components/download_cv";
 
 export default function Header() {
   return (
@@ -20,7 +19,6 @@ export default function Header() {
           icon={<TechIcon icon="linkedin" applyHouseColour />}
         />
       </nav>
-      <DownloadCV />
     </header>
   );
 }
