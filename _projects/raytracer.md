@@ -5,8 +5,15 @@ order: 0
 techStack: ["c++"]
 ---
 
-A C++ ray tracing command line program that implements the ray tracing
-algorithms from the books "Ray Tracing in One Weekend" and "Ray Tracing: The
-Next Week" by Peter Shirley. Also adds extra features: new shapes including
-triangles, and adaptive ray sampler, multithreading, support for diagnostic
-images, and a robust command line interface.
+C++ program that implements ray tracing algorithms from the books "Ray Tracing
+in One Weekend" and "Ray Tracing: The Next Week" by Peter Shirley, with extra
+features:
+
+- **New shapes:** including triangles and ellipses.
+- **Additional abstractions:** new classes for ray sampling and image
+  construction, allowing for:
+  - Adaptive ray sampler.
+  - Multithreading.
+  - Support for diagnostic images.
+- **Robust command line interface:** for rendering different scenes and
+  changing rendering parameters.
