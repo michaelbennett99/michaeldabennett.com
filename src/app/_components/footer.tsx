@@ -1,8 +1,12 @@
+import { cn } from "@/lib/utils";
+
 import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="text-muted-foreground bg-muted border-t text-sm py-4">
+    <footer className={cn(
+      "text-muted-foreground bg-muted border-t text-sm py-4"
+    )}>
       <div className="flex flex-row justify-around items-center">
         <div className="rounded-full">
           <Image

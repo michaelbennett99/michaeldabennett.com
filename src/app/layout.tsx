@@ -19,7 +19,9 @@ export default function RootLayout({
       <Head />
       <body>
         <XThemeProvider>
-          <div className="flex flex-col min-h-screen">
+          <div
+            className="flex flex-col min-h-screen"
+          >
             <Header />
             {children}
             <Footer />
