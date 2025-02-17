@@ -10,7 +10,7 @@ export default function Header() {
         className="text-4xl text-center"
         role="doc-subtitle"
       >
-        <span>Software Engineer</span>
+        <span>Software Developer</span>
       </div>
       <nav className="flex justify-center gap-4 text-3xl">
         <SocialLink
